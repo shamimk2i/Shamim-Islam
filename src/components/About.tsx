@@ -80,7 +80,7 @@ export function About() {
                 </div>
                 <div className="text-xs text-[#6E6E6E] font-normal leading-tight">
                   <span className="text-[#111111] font-medium block mb-1">Polymath Mindset</span>
-                  Synthesizing code, visual identity, and strategic product thinking.
+                  Exploring code, electronics, music, and ideas without boundaries.
                 </div>
               </div>
             </div>

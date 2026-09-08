@@ -17,9 +17,9 @@ export const personalInfo = {
   headline: "Hello,\nI'm Shamim.",
   subheadline: "Chasing adrenaline, adventures & late night gaming sessions.",
   bio: [
-    "I'm Shamim Islam — a young developer and builder who is actively learning, exploring, and building things that work.",
-    "I don't claim hundreds of polished commercial projects; instead, I spend my time coding browser playgrounds, wiring microcontrollers, writing games, and experimenting with software and physical hardware.",
-    "Rooted in genuine curiosity, I believe that building small, working things repeatedly is the most honest and effective way to master engineering."
+    "I'm Shamim Islam, a young polymath and curious builder who loves exploring how things work and learning across different fields.",
+    "I do not like limiting myself to a single box. You might find me writing code, tinkering with electronics, testing AI tools, practicing piano or guitar, deciphering Morse code, or diving into gaming, esports, and business ideas.",
+    "For me, it is all about genuine curiosity, getting my hands dirty, and picking up new skills. I want to keep building, experimenting with whatever catches my interest, and seeing where curiosity takes me."
   ],
   quote: "I'm a young builder who keeps experimenting, learning, and turning ideas into working things.",
   stats: [
@@ -29,9 +29,9 @@ export const personalInfo = {
     { label: "Timezone", value: "GMT+6" }
   ],
   // Shamim Islam portrait photo
-  profileImage: "/images/profile.jpg",
-  profileSecondaryImage: "/images/profile.jpg",
-  photoCreditNote: "Shamim Islam — Dhaka, Bangladesh"
+  profileImage: "https://i.ibb.co.com/TqTsmjZ6/image.jpg",
+  profileSecondaryImage: "https://i.ibb.co.com/TqTsmjZ6/image.jpg",
+  photoCreditNote: "Shamim Islam, Dhaka, Bangladesh"
 };
 
 export const currentlyItems: CurrentlyItem[] = [
