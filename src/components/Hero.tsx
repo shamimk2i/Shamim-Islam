@@ -138,6 +138,21 @@ export function Hero() {
             </div>
           </div>
 
+          {/* Metadata caption below image */}
+          <div className="mt-4 pt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono-meta uppercase tracking-wider text-[#6E6E6E] border-t border-[#D8D7D2] max-w-md mx-auto lg:ml-auto">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#68715F] animate-pulse" />
+              <span className="text-[#111111] font-medium">{personalInfo.role}</span>
+              <span className="text-[#D8D7D2]">•</span>
+              <span>{personalInfo.secondaryRole}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span>{personalInfo.location}</span>
+              <span className="text-[#D8D7D2]">•</span>
+              <span>{personalInfo.gmtOffset}</span>
+            </div>
+          </div>
+
           {/* Background subtle offset geometric frame */}
           <div className="hidden lg:block absolute -bottom-4 -right-4 w-full h-full border border-[#D8D7D2] -z-10 pointer-events-none" />
         </motion.div>
