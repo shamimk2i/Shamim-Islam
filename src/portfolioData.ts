@@ -1,37 +1,37 @@
-import { Project, SkillItem, CurrentlyItem, JourneyItem, NoteItem, ExploreTopic, GalleryPhoto } from './types';
+import { Project, SkillItem, CurrentlyItem, JourneyItem, NoteItem, ExploreTopic, GalleryPhoto, ExperimentItem, CurrentlyBuildingItem } from './types';
 
 export const personalInfo = {
   name: "Shamim Islam",
   brandMark: "SHAMIM.",
-  role: "Creative Technologist",
-  secondaryRole: "Digital Explorer & Builder",
+  role: "Young Developer & Builder",
+  secondaryRole: "Actively Learning & Experimenting",
   location: "Dhaka, Bangladesh",
   region: "Asia",
   coordinates: "23.8103° N, 90.4125° E",
   timezone: "Asia/Dhaka",
   gmtOffset: "GMT+6",
-  email: "hello@shamimislam.dev", // Replace with your real contact email
-  github: "https://github.com",
+  email: "shcreativetv@gmail.com",
+  github: "https://github.com/shamimk2i",
   linkedin: "https://linkedin.com",
   twitter: "https://x.com",
   headline: "Hello,\nI'm Shamim.",
-  subheadline: "Developer, creator, learner and builder exploring technology, design and ideas.",
+  subheadline: "Chasing adrenaline, adventures & late night gaming sessions.",
   bio: [
-    "I'm Shamim Islam — a curious builder interested in technology, software, design, business, and the strange, fertile intersection between them.",
-    "I enjoy learning across disciplines, building digital experiments, exploring modern web possibilities, and turning nebulous ideas into things people can actually touch and interact with.",
-    "Rooted in continuous curiosity, I treat software engineering not merely as code syntax, but as modern craftsmanship — an editorial medium for human thought."
+    "I'm Shamim Islam — a young developer and builder who is actively learning, exploring, and building things that work.",
+    "I don't claim hundreds of polished commercial projects; instead, I spend my time coding browser playgrounds, wiring microcontrollers, writing games, and experimenting with software and physical hardware.",
+    "Rooted in genuine curiosity, I believe that building small, working things repeatedly is the most honest and effective way to master engineering."
   ],
-  quote: "I'm a young polymath who explores technology, design, creativity, business, and ideas.",
+  quote: "I'm a young builder who keeps experimenting, learning, and turning ideas into working things.",
   stats: [
     { label: "Years Exploring", value: "16" },
     { label: "Curiosity", value: "∞" },
-    { label: "Core Disciplines", value: "04+" },
+    { label: "Hardware & Web", value: "Active" },
     { label: "Timezone", value: "GMT+6" }
   ],
-  // Place your own photo at /public/images/profile.jpg or update this path
-  profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop",
-  profileSecondaryImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
-  photoCreditNote: "Replace with your portrait at /public/images/profile.jpg"
+  // Shamim Islam portrait photo
+  profileImage: "/images/profile.jpg",
+  profileSecondaryImage: "/images/profile.jpg",
+  photoCreditNote: "Shamim Islam — Dhaka, Bangladesh"
 };
 
 export const currentlyItems: CurrentlyItem[] = [
@@ -126,69 +126,229 @@ export const skillsData: SkillItem[] = [
 
 export const projectsData: Project[] = [
   {
-    id: "kizuna",
+    id: "live-code-editor",
     number: "01",
-    title: "Kizuna",
-    category: "Study & Productivity Platform",
-    shortDescription: "A minimalist study and cognitive workflow platform built with Japanese editorial design principles.",
-    fullDescription: "Kizuna is a calm, distraction-free study environment tailored for deep work. It combines pomodoro cadence tracking, modular note capture, and ambient acoustic isolation into an interface stripped of all superficial gamification. Built for learners who appreciate quiet digital tools.",
-    year: "2026",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "IndexedDB", "Motion"],
-    image: "https://images.unsplash.com/photo-1507842229451-79731c7e63b6?q=80&w=1200&auto=format&fit=crop",
-    featured: true,
-    metrics: [
-      { label: "Latency", value: "<16ms" },
-      { label: "Focus Efficiency", value: "94%" },
-      { label: "Design System", value: "Monochrome" }
-    ]
-  },
-  {
-    id: "personal-experiments",
-    number: "02",
-    title: "Personal Experiments",
-    category: "Interactive Web Experiments",
-    shortDescription: "A curated digital laboratory exploring creative computing, shaders, and reactive micro-interactions.",
-    fullDescription: "A living repository of micro-prototypes where each experiment tests a single interaction thesis: from smooth spring physics and magnetic typography to procedural pattern generation using mathematical sinusoidal waves.",
-    year: "2025–2026",
-    technologies: ["TypeScript", "Canvas API", "Web Audio API", "Mathematical Vectors"],
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
-    featured: false,
-    metrics: [
-      { label: "Prototypes", value: "18+" },
-      { label: "Frame Rate", value: "60 FPS" }
-    ]
-  },
-  {
-    id: "creative-web",
-    number: "03",
-    title: "Creative Web",
-    category: "Experimental Interfaces & Visual Systems",
-    shortDescription: "An exploration into editorial web design, Swiss typographic grids, and anti-cliché agency layouts.",
-    fullDescription: "Challenging the monotony of modern web templates by treating the digital screen as an editorial publication. Featuring asymmetric columns, strict letterform kerning, subtle monochromatic photography, and tactile page pacing.",
+    title: "Live Code Editor",
+    category: "Web App",
+    shortDescription: "A browser-based coding playground built with JavaScript for writing and testing code directly in the browser.",
+    fullDescription: "A lightweight, in-browser code evaluation environment that allows developers to write HTML, CSS, and JavaScript in real-time with instant rendering inside an isolated document frame. Designed to make rapid interface prototyping and syntax testing frictionless without requiring local server setups.",
     year: "2025",
-    technologies: ["Modern CSS", "Editorial Grids", "Responsive Type", "Semantic HTML"],
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000&auto=format&fit=crop",
-    featured: false,
-    metrics: [
-      { label: "Lighthouse Score", value: "100" },
-      { label: "Grid Columns", value: "12-Col" }
-    ]
+    technologies: ["JavaScript", "HTML", "CSS"],
+    visualType: "code-editor",
+    repository: "https://github.com/shamimk2i/livecodeeditor",
+    demo: "https://shamim1911.github.io/livecodeeditor/",
+    featured: true,
+    hierarchy: "featured",
+    status: "Completed",
+    whatILearned: "Learned how to safely render user-generated markup inside an isolated iframe, debounce keyup listeners for real-time document rewriting, and build a clean split-editor interface using pure vanilla JavaScript."
   },
   {
-    id: "ai-projects",
-    number: "04",
-    title: "AI Projects & Prototypes",
-    category: "Intelligent Tools & Prompt Systems",
-    shortDescription: "Lightweight AI-powered developer utilities and contextual reasoning playgrounds.",
-    fullDescription: "Prototypes leveraging modern multimodal intelligence to synthesize complex technical literature, generate context-aware code diffs, and orchestrate automated web workflows with human-in-the-loop oversight.",
-    year: "2026",
-    technologies: ["Node.js", "LLM APIs", "Structured Outputs", "Prompt Engineering"],
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop",
+    id: "parking-distance-sensor",
+    number: "02",
+    title: "Parking Distance Sensor",
+    category: "Hardware / Arduino",
+    shortDescription: "An Arduino-based parking sensor using ultrasonic sensors to measure distance and display readings on an OLED screen.",
+    fullDescription: "A physical computing setup integrating an ultrasonic sensor (HC-SR04) with an Arduino microcontroller to calculate real-time clearance from approaching obstacles. The measured distance is formatted and drawn to a monochrome I2C OLED screen with dynamic distance threshold warnings.",
+    year: "2025",
+    technologies: ["Arduino UNO", "HC-SR04", "SSD1306 OLED", "Embedded C/C++"],
+    visualType: "hardware-sensor",
+    repository: "https://github.com/shamimk2i/Parking_Distance_sensor",
+    note: "Wokwi simulation available",
     featured: false,
-    metrics: [
-      { label: "Reasoning Models", value: "v2" },
-      { label: "Accuracy", value: "Production" }
+    hierarchy: "large",
+    status: "Prototype Tested",
+    whatILearned: "Mastered ultrasonic pulse-timing mathematics (speed of sound calculations in cm), I2C communication wiring, buffer management on the SSD1306 OLED, and testing embedded firmware using Wokwi virtual simulation."
+  },
+  {
+    id: "speech-to-text",
+    number: "03",
+    title: "Speech to Text",
+    category: "Web Experiment",
+    shortDescription: "A browser-based speech recognition experiment that converts spoken words into text using JavaScript.",
+    fullDescription: "An exploration into voice input in web browsers using the native Web Speech API. The application listens for audio streams, extracts speech tokens, manages interim versus final recognized transcripts, and displays formatted text with clipboard copying.",
+    year: "2025",
+    technologies: ["JavaScript", "Web Speech API"],
+    visualType: "speech-to-text",
+    repository: "https://github.com/shamimk2i/SpeechToText",
+    demo: "https://shamim1911.github.io/SpeechToText/",
+    featured: false,
+    hierarchy: "medium",
+    status: "Working Demo",
+    whatILearned: "Gained direct experience with the browser's native SpeechRecognition interface, audio stream lifecycle events, error recovery when speech recognition times out, and handling browser microphone security permissions."
+  },
+  {
+    id: "3d-racing-game",
+    number: "04",
+    title: "3D Racing Game",
+    category: "Game / Interactive Experiment",
+    shortDescription: "An experimental browser game exploring interactive 3D environments and gameplay.",
+    fullDescription: "An experimental interactive 3D browser mini-game exploring camera perspective, pseudo-3D road rendering, vehicle velocity acceleration curves, and obstacle collisions. Created as a hands-on project to understand core game loop architecture in the browser.",
+    year: "2025",
+    technologies: ["JavaScript", "Interactive 3D", "Canvas / Render Loop"],
+    visualType: "3d-game",
+    repository: "https://github.com/shamimk2i/3d_racinggame",
+    featured: false,
+    hierarchy: "medium",
+    status: "Experimental",
+    whatILearned: "Explored frame-based game loops using requestAnimationFrame, delta time calculations for smooth movement regardless of monitor refresh rate, and pseudo-3D projection geometry."
+  },
+  {
+    id: "image-resizer",
+    number: "05",
+    title: "Image Resizer",
+    category: "Utility",
+    shortDescription: "A lightweight browser tool for resizing images directly in the browser.",
+    fullDescription: "A quick client-side image utility that allows users to upload an image, select custom pixel dimensions or scale percentages, maintain aspect ratio constraints, and export the processed file directly without sending images to any server.",
+    year: "2025",
+    technologies: ["JavaScript", "HTML5 Canvas", "File API"],
+    visualType: "image-resizer",
+    repository: "https://github.com/shamimk2i/image-resizer",
+    demo: "https://shamim1911.github.io/image-resizer/",
+    featured: false,
+    hierarchy: "small",
+    status: "Live Utility",
+    whatILearned: "Learned client-side file reading with FileReader, drawing and scaling image bitmaps on an HTML5 canvas, and generating downloadable image files via Blob URLs."
+  },
+  {
+    id: "hardware-experiments",
+    number: "06",
+    title: "Hardware Experiments",
+    category: "Arduino / Electronics",
+    shortDescription: "A collection of smaller experiments exploring sensors, displays, motors, joysticks, and embedded programming.",
+    fullDescription: "A grouped collection of electronics builds and firmware experiments created during hands-on hardware exploration. Rather than treating each small circuit as an isolated project, this collection chronicles my experiments in interfacing sensors, controlling servos, rendering custom OLED animations, and measuring analog battery voltages.",
+    year: "2024–2025",
+    technologies: ["Arduino", "Sensors", "Servos & Steppers", "OLED", "Embedded C"],
+    visualType: "hardware-experiments",
+    repository: "https://github.com/shamimk2i",
+    featured: false,
+    hierarchy: "grouped",
+    status: "Ongoing Series",
+    whatILearned: "Understood analog-to-digital conversions, PWM motor drivers, frame-by-frame memory-efficient bitmap rendering, circuit breadboarding, and electrical safety fundamentals.",
+    subRepositories: [
+      { name: "joystick_mega.it", url: "https://github.com/shamimk2i/joystick_mega.it", description: "Analog 2-axis joystick input mapping on Arduino Mega" },
+      { name: "oled_animations", url: "https://github.com/shamimk2i/oled_animations", description: "Frame-based bitmap sprite rendering on SSD1306" },
+      { name: "servo_1.o", url: "https://github.com/shamimk2i/servo_1.o", description: "PWM precision angular positioning and sweep cycles" },
+      { name: "Battery_Detector", url: "https://github.com/shamimk2i/Battery_Detector", description: "Analog voltage divider logic for battery health monitoring" },
+      { name: "range_rover_1.o", url: "https://github.com/shamimk2i/range_rover_1.o", description: "Dual DC motor chassis direction & speed controller" }
     ]
+  }
+];
+
+export const currentlyBuildingData: CurrentlyBuildingItem = {
+  eyebrow: "Currently Building",
+  title: "Kizuna",
+  subtitle: "Study Tracker",
+  description: "A study-focused web project I'm developing to experiment with organizing subjects, progress, research, and productivity.",
+  repository: "https://github.com/shamimk2i/kizuna-study-tracker",
+  technology: "Next.js",
+  status: "In progress",
+  notes: "An ongoing personal project and work-in-progress exploring modern web architecture, local persistence, and distraction-free study workflows."
+};
+
+export const moreExperimentsData: ExperimentItem[] = [
+  {
+    id: "exp-calc",
+    name: "Calculator",
+    description: "Interactive arithmetic calculator with keyboard input and clean visual states.",
+    category: "Utility",
+    tech: "JavaScript",
+    repository: "https://github.com/shamimk2i/Calculator"
+  },
+  {
+    id: "exp-xo",
+    name: "XO Game",
+    description: "Classic Tic-Tac-Toe with win detection logic and turn tracking.",
+    category: "Game",
+    tech: "JavaScript",
+    repository: "https://github.com/shamimk2i/XO_Game"
+  },
+  {
+    id: "exp-qr",
+    name: "QR Code Generator",
+    description: "Instant QR code synthesizer with client-side canvas generation and downloading.",
+    category: "Utility",
+    tech: "JavaScript / Canvas",
+    repository: "https://github.com/shamimk2i/QRCode-Generator"
+  },
+  {
+    id: "exp-theme-clock",
+    name: "Theme Clock",
+    description: "Analog and digital clock with smooth rotational degree math and theme toggles.",
+    category: "UI Experiment",
+    tech: "JavaScript / CSS",
+    repository: "https://github.com/shamimk2i/Theme_Clock"
+  },
+  {
+    id: "exp-live-editor",
+    name: "Live Code Editor (Core)",
+    description: "The core sandbox engine behind the in-browser HTML/CSS/JS compiler.",
+    category: "Web App",
+    tech: "JavaScript",
+    repository: "https://github.com/shamimk2i/livecodeeditor"
+  },
+  {
+    id: "exp-battery",
+    name: "Battery Detector",
+    description: "Arduino analog voltage monitoring circuit with battery status LEDs.",
+    category: "Hardware",
+    tech: "Arduino / C++",
+    repository: "https://github.com/shamimk2i/Battery_Detector"
+  },
+  {
+    id: "exp-github-api",
+    name: "GitHub API experiment",
+    description: "Fetching and presenting public developer repositories and activity telemetry.",
+    category: "Web / API",
+    tech: "REST API / JS",
+    repository: "https://github.com/shamimk2i"
+  },
+  {
+    id: "exp-pixel-art",
+    name: "Pixel Art Generator",
+    description: "Interactive dynamic grid canvas for drawing 8-bit sprites and exporting PNGs.",
+    category: "Creative Tool",
+    tech: "JavaScript",
+    repository: "https://github.com/shamimk2i"
+  },
+  {
+    id: "exp-text-editor",
+    name: "Online Text Editor",
+    description: "In-browser rich markdown and text scratchpad with instant local caching.",
+    category: "Productivity",
+    tech: "JavaScript",
+    repository: "https://github.com/shamimk2i"
+  },
+  {
+    id: "exp-captcha",
+    name: "Captcha Practice App",
+    description: "Simulated visual challenge generator testing alphanumeric validation logic.",
+    category: "Experiment",
+    tech: "JavaScript",
+    repository: "https://github.com/shamimk2i"
+  },
+  {
+    id: "exp-donut",
+    name: "Donut Animation",
+    description: "Mathematical 3D spinning ASCII donut ported to a browser console and canvas.",
+    category: "Math / Creative Code",
+    tech: "JavaScript",
+    repository: "https://github.com/shamimk2i"
+  },
+  {
+    id: "exp-box-shadow",
+    name: "Box Shadow Maker",
+    description: "Visual CSS generator with sliders for blur, spread, color, and inset shadows.",
+    category: "CSS Tool",
+    tech: "JavaScript",
+    repository: "https://github.com/shamimk2i"
+  },
+  {
+    id: "exp-dino",
+    name: "No Internet Dino experiment",
+    description: "Recreation of the offline runner with jump gravity, speed ramps, and collision bounds.",
+    category: "Game Experiment",
+    tech: "Canvas / JS",
+    repository: "https://github.com/shamimk2i"
   }
 ];
 

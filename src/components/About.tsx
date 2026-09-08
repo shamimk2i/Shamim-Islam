@@ -71,9 +71,10 @@ export function About() {
               <div className="flex items-center gap-4 pt-1 border-t border-[#D8D7D2]/60">
                 <div className="w-16 h-16 bg-[#F5F4F0] border border-[#D8D7D2] overflow-hidden shrink-0">
                   <img
-                    src={personalInfo.profileSecondaryImage}
-                    alt="Atmospheric study"
-                    className="w-full h-full object-cover editorial-img"
+                    src={personalInfo.profileImage}
+                    alt="Shamim Islam"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover object-center"
                     loading="lazy"
                   />
                 </div>

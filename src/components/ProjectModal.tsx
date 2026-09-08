@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { X, ArrowUpRight, CheckCircle2, Layers, Cpu, Compass } from 'lucide-react';
+import { X, ArrowUpRight, Github, ExternalLink, BookOpen, Layers, CheckCircle } from 'lucide-react';
 import { Project } from '../types';
+import { ProjectVisual } from './ProjectVisual';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -39,7 +40,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="sticky top-0 z-10 bg-[#F5F4F0]/90 backdrop-blur-md px-6 md:px-10 py-5 border-b border-[#D8D7D2] flex items-center justify-between">
+        <div className="sticky top-0 z-20 bg-[#F5F4F0]/95 backdrop-blur-md px-6 md:px-10 py-5 border-b border-[#D8D7D2] flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="font-mono-meta text-xs text-[#68715F] font-bold">
               {project.number}
@@ -52,7 +53,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           <button
             onClick={onClose}
-            className="p-2 text-[#6E6E6E] hover:text-[#111111] hover:bg-[#ECEBE7] rounded-xs transition-colors"
+            className="p-2 text-[#6E6E6E] hover:text-[#111111] hover:bg-[#ECEBE7] rounded-xs transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -61,59 +62,91 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Modal Body */}
         <div className="p-6 md:p-10 space-y-8">
-          {/* Main Visual */}
-          <div className="relative aspect-[16/9] w-full bg-[#ECEBE7] border border-[#D8D7D2] overflow-hidden">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover editorial-img"
-            />
-            <div className="absolute top-4 right-4 bg-[#111111]/80 backdrop-blur-md px-3 py-1 text-[11px] font-mono-meta text-[#F5F4F0] border border-white/10">
-              TIMELINE: {project.year}
-            </div>
+          {/* Main Visual Treatment */}
+          <div className="relative w-full overflow-hidden shadow-sm">
+            <ProjectVisual project={project} aspectClass="aspect-[16/9]" />
           </div>
 
           {/* Title & Short Summary */}
           <div>
-            <h2
-              id="project-modal-title"
-              className="text-3xl sm:text-4xl md:text-5xl font-light text-[#111111] tracking-tight mb-4"
-            >
-              {project.title}
-            </h2>
-            <p className="text-lg text-[#6E6E6E] font-normal leading-relaxed">
+            <div className="flex flex-wrap items-baseline justify-between gap-4 mb-3">
+              <h2
+                id="project-modal-title"
+                className="text-3xl sm:text-4xl md:text-5xl font-light text-[#111111] tracking-tight"
+              >
+                {project.title}
+              </h2>
+              {project.status && (
+                <span className="px-3 py-1 bg-[#ECEBE7] border border-[#D8D7D2] text-xs font-mono-meta text-[#68715F] rounded-xs">
+                  Status: {project.status}
+                </span>
+              )}
+            </div>
+            <p className="text-base sm:text-lg text-[#6E6E6E] font-normal leading-relaxed">
               {project.shortDescription}
             </p>
+            {project.note && (
+              <div className="mt-3 inline-block px-3 py-1 bg-[#68715F]/10 border border-[#68715F]/30 text-xs font-mono-meta text-[#68715F] rounded-xs">
+                ℹ {project.note}
+              </div>
+            )}
           </div>
 
-          {/* Metrics strip if available */}
-          {project.metrics && project.metrics.length > 0 && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 py-6 px-6 bg-[#ECEBE7] border border-[#D8D7D2] rounded-xs">
-              {project.metrics.map((metric, i) => (
-                <div key={i}>
-                  <span className="text-[10px] font-mono-meta uppercase tracking-widest text-[#6E6E6E] block mb-1">
-                    {metric.label}
-                  </span>
-                  <span className="text-xl font-light text-[#111111]">
-                    {metric.value}
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* Deep Case-Study Narrative */}
-          <div className="space-y-4 text-[#111111]/90 text-base leading-relaxed border-t border-[#D8D7D2] pt-6">
+          {/* Detailed Narrative */}
+          <div className="space-y-4 text-[#111111]/90 text-sm sm:text-base leading-relaxed border-t border-[#D8D7D2] pt-6">
             <h3 className="text-xs font-mono-meta uppercase tracking-widest text-[#68715F] font-semibold">
-              Project Architecture & Vision
+              About This Project
             </h3>
             <p>{project.fullDescription}</p>
           </div>
 
+          {/* What I Learned (Authentic Reflection) */}
+          <div className="p-5 bg-[#ECEBE7] border-l-2 border-[#68715F] rounded-xs space-y-2">
+            <div className="flex items-center gap-2 text-xs font-mono-meta uppercase tracking-widest text-[#111111] font-semibold">
+              <BookOpen className="w-3.5 h-3.5 text-[#68715F]" />
+              <span>What I Learned & Explored</span>
+            </div>
+            <p className="text-sm text-[#111111]/80 leading-relaxed font-normal">
+              {project.whatILearned}
+            </p>
+          </div>
+
+          {/* Sub-Repositories if Grouped Project */}
+          {project.subRepositories && project.subRepositories.length > 0 && (
+            <div className="border-t border-[#D8D7D2] pt-6 space-y-3">
+              <h3 className="text-xs font-mono-meta uppercase tracking-widest text-[#68715F] font-semibold">
+                Included Experiment Repositories ({project.subRepositories.length})
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {project.subRepositories.map((repo) => (
+                  <a
+                    key={repo.name}
+                    href={repo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-[#ECEBE7] border border-[#D8D7D2] hover:border-[#111111] rounded-xs transition-colors group flex flex-col justify-between"
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-xs font-mono-meta font-medium text-[#111111] group-hover:text-[#68715F]">
+                        {repo.name}
+                      </span>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#6E6E6E] group-hover:text-[#111111] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
+                    {repo.description && (
+                      <span className="text-[11px] text-[#6E6E6E] font-normal">
+                        {repo.description}
+                      </span>
+                    )}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Technologies Used */}
           <div className="border-t border-[#D8D7D2] pt-6">
             <h3 className="text-xs font-mono-meta uppercase tracking-widest text-[#6E6E6E] mb-3">
-              Stack & Architectural Components
+              Tools & Technologies
             </h3>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
@@ -127,21 +160,40 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
           </div>
 
-          {/* Action links */}
+          {/* Action Links */}
           <div className="border-t border-[#D8D7D2] pt-6 flex flex-wrap items-center justify-between gap-4">
-            <div className="text-xs font-mono-meta text-[#6E6E6E]">
-              Status: Prototype & Active Development (2026)
+            <div className="flex flex-wrap items-center gap-3">
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#111111] text-[#F5F4F0] text-xs uppercase font-mono-meta tracking-wider hover:bg-[#68715F] transition-colors rounded-xs shadow-sm"
+                >
+                  <span>Live Demo</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
+
+              {project.repository && (
+                <a
+                  href={project.repository}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ECEBE7] border border-[#D8D7D2] text-[#111111] text-xs uppercase font-mono-meta tracking-wider hover:border-[#111111] transition-colors rounded-xs"
+                >
+                  <Github className="w-3.5 h-3.5" />
+                  <span>GitHub</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              )}
             </div>
+
             <button
-              onClick={() => {
-                onClose();
-                const contactEl = document.getElementById('contact');
-                if (contactEl) contactEl.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#111111] text-[#F5F4F0] text-xs uppercase font-mono-meta tracking-wider hover:bg-[#68715F] transition-colors rounded-xs"
+              onClick={onClose}
+              className="text-xs font-mono-meta text-[#6E6E6E] hover:text-[#111111] underline underline-offset-4 cursor-pointer"
             >
-              <span>Discuss this project</span>
-              <ArrowUpRight className="w-4 h-4" />
+              Close overlay (Esc)
             </button>
           </div>
         </div>

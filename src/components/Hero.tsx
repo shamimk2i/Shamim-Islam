@@ -1,11 +1,8 @@
-import { useState } from 'react';
-import { ArrowDownRight, ArrowUpRight, ArrowDown, Info } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, ArrowDown } from 'lucide-react';
 import { motion } from 'motion/react';
 import { personalInfo } from '../portfolioData';
 
 export function Hero() {
-  const [showImageTooltip, setShowImageTooltip] = useState(false);
-
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -14,31 +11,10 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-between pt-32 pb-12 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#D8D7D2]/60"
+      className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-between pt-28 md:pt-36 pb-12 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#D8D7D2]/60"
     >
-      {/* Top Metadata Bar */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="flex flex-wrap items-center justify-between gap-4 text-[11px] md:text-[12px] font-mono-meta uppercase tracking-widest text-[#6E6E6E] pb-8 border-b border-[#D8D7D2]/60"
-      >
-        <div className="flex items-center gap-3">
-          <span className="inline-block w-2 h-2 rounded-full bg-[#68715F] animate-pulse" />
-          <span className="text-[#111111] font-medium">{personalInfo.role}</span>
-          <span className="text-[#D8D7D2]">•</span>
-          <span>{personalInfo.secondaryRole}</span>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <span>{personalInfo.location}</span>
-          <span className="text-[#D8D7D2]">•</span>
-          <span>{personalInfo.gmtOffset}</span>
-        </div>
-      </motion.div>
-
       {/* Main Hero Split Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-12 lg:py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-8 lg:py-12">
         {/* Left Column: Massive Editorial Typography & Narrative */}
         <div className="lg:col-span-7 flex flex-col justify-center">
           {/* Micro stats banner above heading */}
@@ -122,43 +98,30 @@ export function Hero() {
         >
           <div
             data-cursor="project"
-            className="relative w-full aspect-[4/5] sm:aspect-[3/4] max-w-md mx-auto lg:ml-auto bg-[#ECEBE7] border border-[#D8D7D2] overflow-hidden group shadow-lg"
+            className="relative w-full aspect-[4/5] sm:aspect-[3/4] max-w-md mx-auto lg:ml-auto bg-[#ECEBE7] border border-[#D8D7D2] overflow-hidden group shadow-lg rounded-xs"
           >
-            {/* Editorial film grain & image */}
+            {/* Shamim Islam Portrait */}
             <img
               src={personalInfo.profileImage}
-              alt="Portrait of Shamim Islam placeholder"
-              className="w-full h-full object-cover editorial-img"
+              alt="Portrait of Shamim Islam"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
               loading="eager"
             />
 
             {/* Subtle photographic framing lines */}
-            <div className="absolute inset-0 pointer-events-none border border-white/20 m-3" />
+            <div className="absolute inset-0 pointer-events-none border border-white/20 m-3 rounded-xs" />
 
-            {/* Top right indicator */}
-            <div className="absolute top-5 right-5 z-10">
-              <button
-                type="button"
-                onClick={() => setShowImageTooltip(!showImageTooltip)}
-                className="flex items-center gap-1.5 px-2.5 py-1 bg-[#111111]/80 backdrop-blur-md text-[#F5F4F0] text-[10px] font-mono-meta tracking-wider rounded-xs border border-white/10 hover:bg-[#111111] transition-colors"
-                title="Photo replacement guide"
-                aria-label="Image guide"
-              >
-                <Info className="w-3 h-3 text-[#68715F]" />
-                <span>PROFILE.JPG</span>
-              </button>
+            {/* Top right location badge */}
+            <div className="absolute top-5 right-5 z-10 pointer-events-none">
+              <div className="flex items-center gap-2 px-2.5 py-1 bg-[#111111]/85 backdrop-blur-md text-[#F5F4F0] text-[10px] font-mono-meta tracking-wider rounded-xs border border-white/10 shadow-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#68715F] animate-pulse" />
+                <span>DHAKA, BD</span>
+              </div>
             </div>
 
-            {/* Replacement instruction banner */}
-            {showImageTooltip && (
-              <div className="absolute bottom-5 left-5 right-5 z-20 p-3 bg-[#111111]/95 text-[#F5F4F0] text-[11px] font-mono-meta leading-relaxed rounded-xs border border-white/15 shadow-xl">
-                <div className="text-[#68715F] font-bold mb-1">REPLACE PORTRAIT:</div>
-                Drop your photo at <code className="text-[#F5F4F0] bg-white/10 px-1 py-0.5 rounded">/public/images/profile.jpg</code> or edit <code className="text-[#F5F4F0] bg-white/10 px-1 py-0.5 rounded">portfolioData.ts</code>.
-              </div>
-            )}
-
             {/* Bottom metadata stamp */}
-            <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-[#111111]/80 via-[#111111]/40 to-transparent flex items-end justify-between text-[#F5F4F0]">
+            <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-[#111111]/90 via-[#111111]/50 to-transparent flex items-end justify-between text-[#F5F4F0]">
               <div>
                 <span className="text-[10px] font-mono-meta uppercase tracking-widest text-[#F5F4F0]/70 block">
                   Subject Ref
