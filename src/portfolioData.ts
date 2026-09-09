@@ -36,7 +36,7 @@ export const personalInfo = {
   // Shamim Islam imagery
   heroImage: "https://i.ibb.co.com/BVz3wdcW/Black-White-Modern-Monogram-CR-Logo-Design-1.png",
   profileImage: "https://i.ibb.co.com/BVz3wdcW/Black-White-Modern-Monogram-CR-Logo-Design-1.png",
-  websitePreviewImage: "https://i.ibb.co.com/BVz3wdcW/Black-White-Modern-Monogram-CR-Logo-Design-1.png",
+  websitePreviewImage: "https://i.ibb.co.com/C57bmzS8/Screenshot-2026-09-09-164111.png",
   profileSecondaryImage: "https://i.ibb.co.com/TqTsmjZ6/image.jpg",
   photoCreditNote: "Shamim Islam, Dhaka, Bangladesh"
 };
