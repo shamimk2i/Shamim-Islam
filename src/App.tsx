@@ -20,8 +20,9 @@ import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
 import { Project } from './types';
 import { projectsData } from './portfolioData';
+import { ThemeProvider } from './context/ThemeContext';
 
-export default function App() {
+function PortfolioApp() {
   const [commandMenuOpen, setCommandMenuOpen] = useState(false);
   const [activeProjectModal, setActiveProjectModal] = useState<Project | null>(null);
 
@@ -49,7 +50,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#F5F4F0] text-[#111111] font-sans selection:bg-[#68715F]/20 selection:text-[#111111]">
+    <div className="relative min-h-screen bg-[#F5F4F0] text-[#111111] font-sans selection:bg-[#68715F]/20 selection:text-[#111111] transition-colors duration-300">
         {/* Scroll Progress Bar */}
         <ProgressBar />
 
@@ -92,13 +93,13 @@ export default function App() {
           {/* 08: Journey & Milestones Timeline */}
           <Journey />
 
-          {/* 07: Things I Like To Explore (Interactive Typography) */}
+          {/* 07: Things I'm Into (Curiosities & Explorations) */}
           <Experiments />
 
           {/* 08: Digital Garden & Notes */}
           <Notes />
 
-          {/* 09: Visual Gallery & Studies */}
+          {/* 09: Visual Archive */}
           <VisualGallery />
 
           {/* 10: Personality & Perspective Statement */}
@@ -117,6 +118,14 @@ export default function App() {
           onClose={() => setActiveProjectModal(null)}
         />
       </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <PortfolioApp />
+    </ThemeProvider>
   );
 }
 

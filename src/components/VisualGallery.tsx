@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { ChevronLeft, ChevronRight, Compass } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { galleryPhotos } from '../portfolioData';
 
 export function VisualGallery() {
@@ -29,8 +29,11 @@ export function VisualGallery() {
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-[#111111]">
-            Visual Studies
+            Visual Archive
           </h2>
+          <p className="mt-4 text-sm font-mono-meta text-[#6E6E6E] max-w-xl">
+            A collection of things I build, capture, discover, experience, and keep coming back to.
+          </p>
         </div>
 
         {/* Scroll Controls */}
@@ -41,14 +44,14 @@ export function VisualGallery() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => scroll('left')}
-              className="p-3 border border-[#D8D7D2] rounded-xs hover:bg-[#ECEBE7] text-[#111111] transition-colors"
+              className="p-3 border border-[#D8D7D2] rounded-xs hover:bg-[#ECEBE7] text-[#111111] transition-colors cursor-pointer"
               aria-label="Scroll left"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="p-3 border border-[#D8D7D2] rounded-xs hover:bg-[#ECEBE7] text-[#111111] transition-colors"
+              className="p-3 border border-[#D8D7D2] rounded-xs hover:bg-[#ECEBE7] text-[#111111] transition-colors cursor-pointer"
               aria-label="Scroll right"
             >
               <ChevronRight className="w-4 h-4" />
@@ -77,20 +80,36 @@ export function VisualGallery() {
                 loading="lazy"
               />
 
-              <div className="absolute top-4 left-4 bg-[#111111]/80 backdrop-blur-md px-2 py-0.5 text-[10px] font-mono-meta text-[#F5F4F0] border border-white/10">
-                FRAME // 0{index + 1}
+              {/* Resting Tag */}
+              <div className="absolute top-4 left-4 bg-[#111111]/80 backdrop-blur-md px-2 py-0.5 text-[10px] font-mono-meta text-[#F5F4F0] border border-white/10 group-hover:opacity-0 transition-opacity duration-200">
+                {photo.frame || `FRAME // 0${index + 1}`}
               </div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5 text-[#F5F4F0]">
-                <p className="text-xs font-mono-meta leading-tight">
-                  {photo.caption}
-                </p>
+              {/* Hover Details Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/90 via-[#111111]/40 to-[#111111]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5 text-[#F5F4F0]">
+                <div className="flex items-center justify-between">
+                  <span className="bg-[#111111]/85 backdrop-blur-md px-2 py-0.5 text-[10px] font-mono-meta text-[#68715F] border border-white/10 uppercase tracking-widest font-semibold">
+                    {photo.frame || `FRAME // 0${index + 1}`}
+                  </span>
+                  <span className="text-[10px] font-mono-meta text-[#F5F4F0]/70 uppercase tracking-wider">
+                    {photo.location} / {photo.year}
+                  </span>
+                </div>
+
+                <div className="space-y-1.5">
+                  <span className="text-xl font-light tracking-tight text-[#F5F4F0] block">
+                    {photo.title}
+                  </span>
+                  <p className="text-xs font-mono-meta leading-relaxed text-[#F5F4F0]/90">
+                    &ldquo;{photo.caption}&rdquo;
+                  </p>
+                </div>
               </div>
             </div>
 
             <div className="mt-3 flex items-center justify-between text-xs font-mono-meta text-[#6E6E6E]">
               <span className="text-[#111111] font-medium">{photo.title}</span>
-              <span>{photo.location} — {photo.year}</span>
+              <span>{photo.location} / {photo.year}</span>
             </div>
           </div>
         ))}

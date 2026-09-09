@@ -41,7 +41,7 @@ export function SelectedWork({ onOpenModal }: SelectedWorkProps) {
 
       <div className="space-y-24 md:space-y-32">
         {/* =======================================================
-            01 — FEATURED #1 / LARGEST: Live Code Editor
+            01 / FEATURED #1 / LARGEST: Live Code Editor
         ======================================================= */}
         <div
           data-cursor="project"
@@ -140,7 +140,7 @@ export function SelectedWork({ onOpenModal }: SelectedWorkProps) {
         </div>
 
         {/* =======================================================
-            02 — LARGE: Parking Distance Sensor (Hardware / Arduino)
+            02 / LARGE: Parking Distance Sensor (Hardware / Arduino)
         ======================================================= */}
         <div
           data-cursor="project"
@@ -227,11 +227,11 @@ export function SelectedWork({ onOpenModal }: SelectedWorkProps) {
         </div>
 
         {/* =======================================================
-            03 & 04 — MEDIUM: Speech to Text & 3D Racing Game
+            03 & 04 / MEDIUM: Speech to Text & 3D Racing Game
         ======================================================= */}
         <div className="border-t border-[#D8D7D2] pt-16 md:pt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
-            {/* 03 — Speech to Text */}
+            {/* 03 / Speech to Text */}
             <div
               data-cursor="project"
               className="group space-y-6 flex flex-col justify-between"
@@ -310,7 +310,7 @@ export function SelectedWork({ onOpenModal }: SelectedWorkProps) {
               </div>
             </div>
 
-            {/* 04 — 3D Racing Game */}
+            {/* 04 / 3D Racing Game */}
             <div
               data-cursor="project"
               className="group space-y-6 flex flex-col justify-between"
@@ -388,11 +388,11 @@ export function SelectedWork({ onOpenModal }: SelectedWorkProps) {
         </div>
 
         {/* =======================================================
-            05 & 06 — SMALLER & GROUPED: Image Resizer & Hardware Experiments
+            05 & 06 / SMALLER & GROUPED: Image Resizer & Hardware Experiments
         ======================================================= */}
         <div className="border-t border-[#D8D7D2] pt-16 md:pt-20">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-start">
-            {/* 05 — Image Resizer (Smaller) */}
+            {/* 05 / Image Resizer (Smaller) */}
             <div
               data-cursor="project"
               className="md:col-span-5 group space-y-5"
@@ -453,7 +453,7 @@ export function SelectedWork({ onOpenModal }: SelectedWorkProps) {
               </div>
             </div>
 
-            {/* 06 — Hardware Experiments (Grouped Collection) */}
+            {/* 06 / Hardware Experiments (Grouped Collection) */}
             <div
               data-cursor="project"
               className="md:col-span-7 group space-y-5 bg-[#ECEBE7]/50 border border-[#D8D7D2] rounded-xs p-6 md:p-8"

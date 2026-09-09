@@ -80,7 +80,7 @@ export function About() {
                 </div>
                 <div className="text-xs text-[#6E6E6E] font-normal leading-tight">
                   <span className="text-[#111111] font-medium block mb-1">Polymath Mindset</span>
-                  Exploring code, electronics, music, and ideas without boundaries.
+                  &ldquo;Jack of all trades is a master of none, but oftentimes better than a master of one&rdquo;
                 </div>
               </div>
             </div>

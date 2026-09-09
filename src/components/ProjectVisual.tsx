@@ -23,7 +23,7 @@ export function ProjectVisual({ project, aspectClass = "aspect-[16/10]", isInter
                 <span className="w-2.5 h-2.5 rounded-full bg-[#E56B55]/70" />
                 <span className="w-2.5 h-2.5 rounded-full bg-[#F2BD38]/70" />
                 <span className="w-2.5 h-2.5 rounded-full bg-[#68715F]" />
-                <span className="ml-2 text-[11px] text-[#A0A09B] tracking-wider">playground.js — Live Sandbox</span>
+                <span className="ml-2 text-[11px] text-[#A0A09B] tracking-wider">playground.js / Live Sandbox</span>
               </div>
               <span className="text-[10px] px-2 py-0.5 bg-white/5 border border-white/10 text-[#68715F] uppercase tracking-widest rounded-xs">
                 Real-Time Eval

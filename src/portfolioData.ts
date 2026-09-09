@@ -2,7 +2,7 @@ import { Project, SkillItem, CurrentlyItem, JourneyItem, NoteItem, ExploreTopic,
 
 export const personalInfo = {
   name: "Shamim Islam",
-  brandMark: "SHAMIM.",
+  brandMark: "Shamim Islam",
   role: "Young Developer & Builder",
   secondaryRole: "Actively Learning & Experimenting",
   location: "Dhaka, Bangladesh",
@@ -10,16 +10,21 @@ export const personalInfo = {
   coordinates: "23.8103° N, 90.4125° E",
   timezone: "Asia/Dhaka",
   gmtOffset: "GMT+6",
-  email: "shcreativetv@gmail.com",
-  github: "https://github.com/shamimk2i",
-  linkedin: "https://linkedin.com",
-  twitter: "https://x.com",
+  email: "shamimislams987@gmail.com",
+  github: "https://github.com/shamimk2i/",
+  linkedin: "https://www.linkedin.com/in/shamimk2i/",
+  twitter: "https://x.com/shamim_plays",
+  youtube: "https://www.youtube.com/@Flick_Plays_FPS",
+  facebook: "https://www.facebook.com/shamimk2i/",
+  instagram: "https://www.instagram.com/shamimk2i/",
+  twitch: "https://www.twitch.tv/flickshotk2",
+  tiktok: "https://www.tiktok.com/@flickshotk2",
   headline: "Hello,\nI'm Shamim.",
   subheadline: "Chasing adrenaline, adventures & late night gaming sessions.",
   bio: [
     "I'm Shamim Islam, a young polymath and curious builder who loves exploring how things work and learning across different fields.",
-    "I do not like limiting myself to a single box. You might find me writing code, tinkering with electronics, testing AI tools, practicing piano or guitar, deciphering Morse code, or diving into gaming, esports, and business ideas.",
-    "For me, it is all about genuine curiosity, getting my hands dirty, and picking up new skills. I want to keep building, experimenting with whatever catches my interest, and seeing where curiosity takes me."
+    "I don't like limiting myself to one box. My interests span technology, science, creativity, music, gaming, business, and whatever sparks my curiosity. I'm always learning something new, connecting ideas, and picking up new skills along the way.",
+    "For me, it's about staying curious, getting my hands dirty, and seeing where that curiosity takes me."
   ],
   quote: "I'm a young builder who keeps experimenting, learning, and turning ideas into working things.",
   stats: [
@@ -36,91 +41,104 @@ export const personalInfo = {
 
 export const currentlyItems: CurrentlyItem[] = [
   {
-    category: "Learning",
-    focus: "Systems architecture & low-level web rendering",
-    details: "Deep diving into WebGL pipelines, modern compiler theories, and memory-efficient UI patterns.",
+    category: "LEARNING",
+    focus: "Python & Programming",
+    details: "Building the fundamentals and experimenting with small ideas.",
     indicatorColor: "#68715F",
-    year: "2026"
+    year: "2026",
+    status: "2026"
   },
   {
-    category: "Building",
-    focus: "Kizuna & focused micro-tools",
-    details: "Crafting a minimalist study and cognitive productivity platform engineered for hyper-focus.",
+    category: "BUILDING",
+    focus: "Electronics & Hardware",
+    details: "Getting hands-on with circuits, components, and physical projects.",
     indicatorColor: "#111111",
-    year: "Active"
+    year: "Active",
+    status: "Active"
   },
   {
-    category: "Exploring",
-    focus: "Japanese editorial aesthetics & Swiss typography",
-    details: "Analyzing asymmetric grid layouts, generous negative space, and quiet digital interfaces.",
+    category: "EXPLORING",
+    focus: "Business Ideas",
+    details: "Learning how ideas become real products, businesses, and opportunities.",
     indicatorColor: "#68715F",
-    year: "Ongoing"
+    year: "Ongoing",
+    status: "Ongoing"
   },
   {
-    category: "Reading",
-    focus: "Cybernetics, mental models & design philosophies",
-    details: "Currently exploring Dieter Rams' principles, Victor Papanek, and cognitive science essays.",
+    category: "PRACTICING",
+    focus: "Music & New Skills",
+    details: "Guitar, piano, Morse code, and whatever catches my curiosity next.",
     indicatorColor: "#8E8D88",
-    year: "Q1"
+    year: "Always",
+    status: "Always"
   },
   {
-    category: "Experimenting",
-    focus: "Local-first AI agents & generative creative coding",
-    details: "Testing lightweight inference engines that run directly in modern browser sandboxes.",
+    category: "OBSESSING OVER",
+    focus: "Technology & IT",
+    details: "Exploring computers, software, AI, and the things happening behind the screen.",
     indicatorColor: "#68715F",
-    year: "Lab"
+    year: "Current",
+    status: "Current"
+  },
+  {
+    category: "AIMING FOR",
+    focus: "More to Build, More to Learn",
+    details: "Keep experimenting, keep improving, and see how far curiosity can take me.",
+    indicatorColor: "#111111",
+    year: "Ongoing",
+    status: "Ongoing"
   }
 ];
 
 export const skillsData: SkillItem[] = [
   {
     number: "01",
-    title: "Web Development",
-    category: "Engineering",
-    description: "Building resilient, fast, and scalable web applications with contemporary TypeScript, modular architectures, and clean API design.",
-    tags: ["TypeScript", "React", "Next.js", "Node.js", "Tailwind CSS"]
+    title: "IT & Technology",
+    category: "TECHNOLOGY",
+    description: "Exploring computers, software, AI tools, hardware, and the technology behind the things I use and build.",
+    tags: ["Computers", "Software", "AI Tools", "Windows", "Hardware"]
   },
   {
     number: "02",
-    title: "Frontend Engineering",
-    category: "Craft",
-    description: "Obsessing over rendering performance, layout stability, zero-latency micro-interactions, and accessible semantic document models.",
-    tags: ["State Machines", "Virtual DOM", "Browser Performance", "Fluid Type"]
+    title: "Python & Programming",
+    category: "PROGRAMMING",
+    description: "Learning Python and programming by building small projects, experimenting, and figuring things out hands-on.",
+    tags: ["Python", "Algorithms", "GitHub", "Problem Solving", "Scripting"]
   },
   {
     number: "03",
-    title: "Creative Technology",
-    category: "Exploration",
-    description: "Merging experimental interface design with dynamic mathematics, Canvas rendering, and expressive motion choreography.",
-    tags: ["WebGL Basics", "Motion/React", "Interactive Canvases", "Micro-Physics"]
+    title: "Robotics & Electronics",
+    category: "HARDWARE",
+    description: "Building and experimenting with Arduino, electronics, robotics, circuits, and physical hardware.",
+    tags: ["Arduino", "Circuits", "Sensors", "Physical Hardware", "Robotics"]
   },
   {
     number: "04",
-    title: "UI / UX Design",
-    category: "Architecture",
-    description: "Translating complex functional requirements into calm, restrained editorial interfaces rooted in mathematical grids and Swiss layouts.",
-    tags: ["Design Systems", "Typography Hierarchy", "Information Architecture", "Figma"]
+    title: "Web Development",
+    category: "BUILDING",
+    description: "Creating websites and web experiences through coding, experimentation, and a lot of hands-on building.",
+    tags: ["HTML & CSS", "JavaScript", "React", "Vibe Coding", "Web Projects"]
   },
   {
     number: "05",
-    title: "AI & Prompt Engineering",
-    category: "Emerging Tech",
-    description: "Harnessing modern LLMs, reasoning models, and agent workflows to augment human capability rather than replacing original craft.",
-    tags: ["Prompt Architecture", "Context Engineering", "Local Models", "Function Calling"]
+    title: "AI & Creative Experiments",
+    category: "EXPERIMENTATION",
+    description: "Trying new AI tools, ideas, workflows, and random experiments to see what can actually be made.",
+    tags: ["AI Workflows", "Prompting", "Creative Coding", "Rapid Experiments"]
   },
   {
     number: "06",
-    title: "Digital Experiments",
-    category: "Playground",
-    description: "Creating rapid interactive prototypes to stress-test ideas before turning them into full products.",
-    tags: ["Micro-apps", "Generative Art", "CLI Utilities", "Creative Coding"]
+    title: "Business & Ideas",
+    category: "BUSINESS",
+    description: "Exploring business ideas, understanding problems, thinking about products, and learning how businesses actually work.",
+    tags: ["Product Ideas", "Business Models", "Opportunity", "Problem Solving"]
   },
   {
     number: "07",
-    title: "Business & Ideas",
-    category: "Strategy",
-    description: "Thinking like a product founder: discovering real human problems, validating hypotheses, and understanding unit economics.",
-    tags: ["Product Strategy", "Growth Loops", "First-Principles Thinking", "Lean Validation"]
+    title: "Gaming & Esports",
+    category: "COMPETITION",
+    description: "Playing competitively, improving my Counter-Strike Elo, and exploring the world of gaming and esports.",
+    tags: ["Counter-Strike", "Competitive Elo", "Strategy", "Esports Analysis"]
   }
 ];
 
@@ -382,16 +400,144 @@ export const journeyData: JourneyItem[] = [
 ];
 
 export const exploreTopics: ExploreTopic[] = [
-  { id: "code", name: "Code", subtitle: "Clean, functional architecture", category: "Craft", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" },
-  { id: "design", name: "Design", subtitle: "Swiss typography & whitespace", category: "Aesthetic", image: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=600&auto=format&fit=crop" },
-  { id: "ai", name: "AI", subtitle: "Augmenting human cognition", category: "Technology", image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=600&auto=format&fit=crop" },
-  { id: "business", name: "Business", subtitle: "Sustainable unit economics", category: "Strategy", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop" },
-  { id: "japanese-culture", name: "Japanese Culture", subtitle: "Ma (間) & wabi-sabi precision", category: "Philosophy", image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=600&auto=format&fit=crop" },
-  { id: "writing", name: "Writing", subtitle: "Clarifying thought through prose", category: "Reflection", image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600&auto=format&fit=crop" },
-  { id: "photography", name: "Photography", subtitle: "Monochrome shadows & geometry", category: "Visual", image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=600&auto=format&fit=crop" },
-  { id: "cybersecurity", name: "Cybersecurity", subtitle: "Trust, cryptography & systems", category: "Systems", image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600&auto=format&fit=crop" },
-  { id: "learning", name: "Learning", subtitle: "First-principles mental models", category: "Growth", image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=600&auto=format&fit=crop" },
-  { id: "ideas", name: "Ideas", subtitle: "Connecting the seemingly unrelated", category: "Mindset", image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop" }
+  // CORE INTERESTS
+  {
+    id: "gaming-esports",
+    name: "Gaming & Esports",
+    subtitle: "Playing, competing, improving, and probably spending too much time thinking about games.",
+    category: "Competition",
+    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop",
+    isCore: true
+  },
+  {
+    id: "it-technology",
+    name: "IT & Technology",
+    subtitle: "Computers, hardware, software, and the endless rabbit hole of figuring out how things work.",
+    category: "Technology",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+    isCore: true
+  },
+  {
+    id: "business",
+    name: "Business",
+    subtitle: "Thinking about ideas, opportunities, products, and how something can actually become a business.",
+    category: "Entrepreneurship",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
+    isCore: true
+  },
+  {
+    id: "programming",
+    name: "Programming",
+    subtitle: "Learning by building things, breaking things, and figuring out why they broke.",
+    category: "Coding",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+    isCore: true
+  },
+  {
+    id: "ai",
+    name: "AI",
+    subtitle: "Trying new tools, experimenting with ideas, and seeing what AI can actually do.",
+    category: "Experimentation",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
+    isCore: true
+  },
+  {
+    id: "robotics-electronics",
+    name: "Robotics & Electronics",
+    subtitle: "Arduino, circuits, hardware, robotics, and making things move in the real world.",
+    category: "Hardware",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
+    isCore: true
+  },
+  {
+    id: "web-development",
+    name: "Web Development",
+    subtitle: "Building websites, experimenting with ideas, and turning random concepts into something you can actually use.",
+    category: "Building",
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop",
+    isCore: true
+  },
+  // OTHER CURIOSITIES
+  {
+    id: "music",
+    name: "Music",
+    subtitle: "Guitar, piano, and learning just because I want to.",
+    category: "Sound",
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop",
+    isCore: false
+  },
+  {
+    id: "guitar",
+    name: "Guitar",
+    subtitle: "Practicing chords, acoustic melodies, and building muscle memory string by string.",
+    category: "Instrument",
+    image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop",
+    isCore: false
+  },
+  {
+    id: "piano",
+    name: "Piano",
+    subtitle: "Learning keys, chords, and playing melodies that sound good to my ears.",
+    category: "Instrument",
+    image: "https://images.unsplash.com/photo-1520523839898-50712825e3a7?q=80&w=800&auto=format&fit=crop",
+    isCore: false
+  },
+  {
+    id: "chess",
+    name: "Chess",
+    subtitle: "Learning strategy one mistake at a time.",
+    category: "Strategy",
+    image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800&auto=format&fit=crop",
+    isCore: false
+  },
+  {
+    id: "speedcubing",
+    name: "Speedcubing",
+    subtitle: "Trying to make my hands faster than my brain.",
+    category: "Skill",
+    image: "https://images.unsplash.com/photo-1568832359672-e36cf5d74f54?q=80&w=800&auto=format&fit=crop",
+    isCore: false
+  },
+  {
+    id: "morse-code",
+    name: "Morse Code",
+    subtitle: "One of those random skills I decided I wanted to learn.",
+    category: "Skill",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+    isCore: false
+  },
+  {
+    id: "japanese-culture",
+    name: "Japanese Culture",
+    subtitle: "An ongoing fascination with Japan, its culture, design, and visual style.",
+    category: "Culture",
+    image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=800&auto=format&fit=crop",
+    isCore: false
+  },
+  {
+    id: "photography",
+    name: "Photography",
+    subtitle: "Capturing everyday scenes, shadows, architecture, and interesting light.",
+    category: "Visual",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop",
+    isCore: false
+  },
+  {
+    id: "adventure",
+    name: "Adventure",
+    subtitle: "Trying new things and getting out of the usual routine.",
+    category: "Exploration",
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop",
+    isCore: false
+  },
+  {
+    id: "learning",
+    name: "Learning",
+    subtitle: "Curiosity-driven dives into whatever catches my attention next.",
+    category: "Mindset",
+    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop",
+    isCore: false
+  }
 ];
 
 export const notesData: NoteItem[] = [
@@ -401,7 +547,7 @@ export const notesData: NoteItem[] = [
     readTime: "4 min read",
     category: "Engineering Philosophy",
     title: "Why I like building things before I fully understand them",
-    excerpt: "Passive reading creates the illusion of competence. Active tactile implementation destroys that illusion immediately — exposing the actual ground truths.",
+    excerpt: "Passive reading creates the illusion of competence. Active tactile implementation destroys that illusion immediately, exposing the actual ground truths.",
     content: "When you read a book or tutorial on software architecture, your mind nods along in passive agreement. Everything looks simple in linear prose. But the moment you fire up an empty editor and try to connect two decoupled modules, you collide against the genuine constraints of the machine.\n\nBuilding before understanding isn't recklessness; it is accelerated feedback. By failing immediately on step three rather than memorizing ten theoretical chapters, you calibrate your questions to reality.\n\nThe real joy of development is that the machine is an unforgiving teacher: it doesn't care about your good intentions, only whether your logic actually holds."
   },
   {
@@ -429,55 +575,60 @@ export const notesData: NoteItem[] = [
     category: "Field Notes",
     title: "Things I discovered this month",
     excerpt: "A collection of small observations on typography, memory efficiency in JavaScript, and the beauty of architectural brutalism.",
-    content: "1. Negative space is not empty space; it is active gravitational silence that gives meaning to adjacent typography.\n2. In high-performance web applications, measuring frame budgets (16.6ms) forces you to rethink unnecessary re-renders more than any linter rule.\n3. The best ideas come when stepping away from the glowing screen — walking, observing physical structures, and allowing subconscious synthesis to take place."
+    content: "1. Negative space is not empty space; it is active gravitational silence that gives meaning to adjacent typography.\n2. In high-performance web applications, measuring frame budgets (16.6ms) forces you to rethink unnecessary re-renders more than any linter rule.\n3. The best ideas come when stepping away from the glowing screen, walking, observing physical structures, and allowing subconscious synthesis to take place."
   }
 ];
 
 export const galleryPhotos: GalleryPhoto[] = [
   {
     id: "g1",
-    title: "Tokyo Shadows",
-    location: "Tokyo, Japan",
+    title: "Building",
+    frame: "FRAME // 01",
+    location: "Hardware Lab",
     year: "2026",
-    aspect: "aspect-[4/5]",
-    image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=800&auto=format&fit=crop",
-    caption: "Geometric precision and quiet morning mist."
+    aspect: "aspect-[3/4]",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
+    caption: "Experiments, circuits, components, and things I build just to see if I can."
   },
   {
     id: "g2",
-    title: "Monochrome Concrete",
-    location: "Kyoto",
+    title: "Projects",
+    frame: "FRAME // 02",
+    location: "Codebase",
     year: "2026",
-    aspect: "aspect-[1/1]",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
-    caption: "Minimalist concrete surfaces and soft daylight gradients."
+    aspect: "aspect-[3/4]",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+    caption: "Turning random ideas into something I can actually build, use, and improve."
   },
   {
     id: "g3",
-    title: "Tactile Typography",
-    location: "Studio",
-    year: "2025",
+    title: "Gaming",
+    frame: "FRAME // 03",
+    location: "Competitive",
+    year: "2026",
     aspect: "aspect-[3/4]",
-    image: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=800&auto=format&fit=crop",
-    caption: "Editorial layouts and balanced letterforms."
+    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop",
+    caption: "Playing, competing, improving, and spending way too much time chasing the next level."
   },
   {
     id: "g4",
-    title: "Ceramic & Ma",
-    location: "Atelier",
+    title: "Hobbies",
+    frame: "FRAME // 04",
+    location: "Practice",
     year: "2026",
-    aspect: "aspect-[4/5]",
-    image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=800&auto=format&fit=crop",
-    caption: "Wabi-sabi textures in quiet interior spaces."
+    aspect: "aspect-[3/4]",
+    image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop",
+    caption: "Always learning something new, usually just because I got curious."
   },
   {
     id: "g5",
-    title: "Night Reflections",
-    location: "Shibuya",
+    title: "Travel",
+    frame: "FRAME // 05",
+    location: "Expeditions",
     year: "2026",
-    aspect: "aspect-[16/10]",
-    image: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1000&auto=format&fit=crop",
-    caption: "Desaturated street light reflections and silent city rhythm."
+    aspect: "aspect-[3/4]",
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop",
+    caption: "Collecting places, experiences, stories, and reasons to keep exploring."
   }
 ];
 

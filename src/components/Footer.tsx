@@ -100,62 +100,45 @@ export function Footer({ onOpenCommand }: FooterProps) {
                   onClick={() => scrollToSection('gallery')}
                   className="hover:text-[#F5F4F0] transition-colors"
                 >
-                  Visual Studies
+                  Visual Archive
                 </button>
               </li>
             </ul>
           </div>
 
           {/* Social & Palette shortcut */}
-          <div className="md:col-span-3 space-y-4">
+          <div className="md:col-span-3 space-y-3">
             <span className="text-[11px] font-mono-meta uppercase tracking-widest text-[#F5F4F0]/50 block">
               Network
             </span>
-            <ul className="space-y-2 text-xs font-mono-meta tracking-wider text-[#F5F4F0]/80">
-              <li>
-                <a
-                  href={`mailto:${personalInfo.email}`}
-                  className="hover:text-[#F5F4F0] transition-colors"
-                >
-                  Email ↗
-                </a>
-              </li>
-              <li>
-                <a
-                  href={personalInfo.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#F5F4F0] transition-colors"
-                >
-                  GitHub ↗
-                </a>
-              </li>
-              <li>
-                <a
-                  href={personalInfo.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#F5F4F0] transition-colors"
-                >
-                  LinkedIn ↗
-                </a>
-              </li>
-              <li>
-                <a
-                  href={personalInfo.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#F5F4F0] transition-colors"
-                >
-                  X / Twitter ↗
-                </a>
-              </li>
+            <ul className="space-y-1.5 text-xs font-mono-meta tracking-wider text-[#F5F4F0]/80">
+              {[
+                { label: 'YouTube ↗', href: personalInfo.youtube },
+                { label: 'Instagram ↗', href: personalInfo.instagram },
+                { label: 'GitHub ↗', href: personalInfo.github },
+                { label: 'LinkedIn ↗', href: personalInfo.linkedin },
+                { label: 'X / Twitter ↗', href: personalInfo.twitter },
+                { label: 'Facebook ↗', href: personalInfo.facebook },
+                { label: 'Twitch ↗', href: personalInfo.twitch },
+                { label: 'TikTok ↗', href: personalInfo.tiktok },
+              ].map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#F5F4F0] hover:translate-x-0.5 transition-all inline-block"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
 
             <div className="pt-2">
               <button
                 onClick={onOpenCommand}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-mono-meta text-[#F5F4F0]/70 hover:text-[#F5F4F0] border border-white/20 rounded-xs bg-white/5 hover:bg-white/10 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-mono-meta text-[#F5F4F0]/70 hover:text-[#F5F4F0] border border-white/20 rounded-xs bg-white/5 hover:bg-white/10 transition-colors cursor-pointer"
               >
                 <Terminal className="w-3 h-3 text-[#68715F]" />
                 <span>Command Menu [K]</span>

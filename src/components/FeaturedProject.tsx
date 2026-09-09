@@ -34,7 +34,7 @@ export function FeaturedProject({ project, onOpenModal }: FeaturedProjectProps) 
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-3">
               <span className="text-xs font-mono-meta uppercase tracking-widest text-[#68715F] font-semibold block">
-                {project.number} — {project.category}
+                {project.number} / {project.category}
               </span>
               <h3
                 onClick={() => onOpenModal(project)}

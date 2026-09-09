@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
+import { useTheme } from '../context/ThemeContext';
 
 export function CustomCursor() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
   const [cursorType, setCursorType] = useState<'default' | 'link' | 'project' | 'read' | 'drag'>('default');
   const [isVisible, setIsVisible] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const { isDark } = useTheme();
 
   useEffect(() => {
     // Check for touch/coarse pointer or reduced motion
@@ -63,11 +65,11 @@ export function CustomCursor() {
         height: cursorType === 'project' || cursorType === 'read' ? 68 : cursorType === 'link' ? 36 : 10,
         backgroundColor:
           cursorType === 'project' || cursorType === 'read'
-            ? '#111111'
+            ? (isDark ? '#EDEDEB' : '#111111')
             : cursorType === 'link'
-            ? 'rgba(104, 113, 95, 0.18)'
-            : '#111111',
-        border: cursorType === 'link' ? '1px solid rgba(104, 113, 95, 0.5)' : 'none',
+            ? (isDark ? 'rgba(143, 161, 131, 0.25)' : 'rgba(104, 113, 95, 0.18)')
+            : (isDark ? '#EDEDEB' : '#111111'),
+        border: cursorType === 'link' ? `1px solid ${isDark ? 'rgba(143, 161, 131, 0.6)' : 'rgba(104, 113, 95, 0.5)'}` : 'none',
       }}
       transition={{
         type: 'spring',
@@ -80,7 +82,7 @@ export function CustomCursor() {
       }}
     >
       {(cursorType === 'project' || cursorType === 'read') && (
-        <span className="text-[10px] tracking-widest uppercase font-mono-meta text-[#F5F4F0] font-medium select-none">
+        <span className={`text-[10px] tracking-widest uppercase font-mono-meta font-medium select-none ${isDark ? 'text-[#121315]' : 'text-[#F5F4F0]'}`}>
           {cursorType === 'project' ? 'VIEW ↗' : 'READ'}
         </span>
       )}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Terminal } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Terminal, Sun, Moon } from 'lucide-react';
 import { personalInfo } from '../portfolioData';
+import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
   onOpenCommand: () => void;
@@ -9,6 +10,7 @@ interface NavbarProps {
 export function Navbar({ onOpenCommand }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,11 +51,16 @@ export function Navbar({ onOpenCommand }: NavbarProps) {
           <button
             id="nav-logo-btn"
             onClick={scrollToTop}
-            className="group flex items-center gap-2 text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-[#111111]"
+            className="group flex items-center gap-2.5 text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-[#111111]"
             aria-label="Shamim Islam - Return to top"
           >
+            <img
+              src="/favicon-32x32.png"
+              alt="Favicon"
+              className="w-5 h-5 rounded-xs object-contain border border-[#D8D7D2]/80 bg-black shrink-0"
+            />
             <span className="text-[17px] md:text-[18px] font-semibold tracking-tight text-[#111111] transition-transform duration-200 group-hover:-translate-y-px">
-              {personalInfo.brandMark}
+              Shamim Islam
             </span>
             <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-[#68715F] opacity-70 group-hover:opacity-100 group-hover:scale-125 transition-all" />
           </button>
@@ -97,8 +104,37 @@ export function Navbar({ onOpenCommand }: NavbarProps) {
             </button>
           </nav>
 
-          {/* Right Action: Command shortcut & CTA */}
-          <div className="flex items-center gap-3 md:gap-5">
+          {/* Right Action: Theme toggle, Command shortcut & CTA */}
+          <div className="flex items-center gap-2.5 sm:gap-3 md:gap-4">
+            {/* Floating Dark Mode Toggle Button */}
+            <button
+              id="nav-theme-toggle-btn"
+              onClick={toggleTheme}
+              className={`group relative flex items-center gap-2 px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-full border transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 ${
+                isDark
+                  ? 'bg-[#1C1D21] border-[#31333A] text-[#EDEDEB] hover:bg-[#25272D] hover:border-[#42454E] shadow-[0_2px_12px_rgba(0,0,0,0.3)]'
+                  : 'bg-[#ECEBE7]/90 border-[#D8D7D2] text-[#111111] hover:bg-[#ECEBE7] hover:border-[#111111]/30 shadow-[0_2px_8px_rgba(0,0,0,0.04)]'
+              }`}
+              aria-label={isDark ? 'Switch to light theme' : 'Switch to dark charcoal theme'}
+              title={isDark ? 'Switch to light theme' : 'Switch to dark charcoal theme'}
+            >
+              <div className="relative w-4 h-4 flex items-center justify-center">
+                {isDark ? (
+                  <Sun className="w-3.5 h-3.5 text-[#E5C158] transition-transform duration-300 group-hover:rotate-45" />
+                ) : (
+                  <Moon className="w-3.5 h-3.5 text-[#68715F] transition-transform duration-300 group-hover:-rotate-12" />
+                )}
+              </div>
+              <span className="text-[10px] font-mono-meta tracking-widest uppercase hidden sm:inline font-medium">
+                {isDark ? 'LIGHT' : 'DARK'}
+              </span>
+              <span
+                className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${
+                  isDark ? 'bg-[#8FA183] shadow-[0_0_6px_#8FA183]' : 'bg-[#68715F]'
+                }`}
+              />
+            </button>
+
             {/* Quick Command shortcut trigger */}
             <button
               id="nav-command-btn"
@@ -148,13 +184,13 @@ export function Navbar({ onOpenCommand }: NavbarProps) {
             </span>
             <div className="flex flex-col space-y-4">
               {[
-                { label: '01 — About', id: 'about' },
-                { label: '02 — Currently', id: 'currently' },
-                { label: '03 — Selected Work', id: 'work' },
-                { label: '04 — My Journey', id: 'journey' },
-                { label: '05 — Notes & Ideas', id: 'notes' },
-                { label: '06 — Visual Gallery', id: 'gallery' },
-                { label: '07 — Contact', id: 'contact' }
+                { label: '01 / About', id: 'about' },
+                { label: '02 / Currently', id: 'currently' },
+                { label: '03 / Selected Work', id: 'work' },
+                { label: '04 / My Journey', id: 'journey' },
+                { label: '05 / Notes & Ideas', id: 'notes' },
+                { label: '06 / Visual Gallery', id: 'gallery' },
+                { label: '07 / Contact', id: 'contact' }
               ].map((item, idx) => (
                 <button
                   key={item.id}
@@ -169,16 +205,31 @@ export function Navbar({ onOpenCommand }: NavbarProps) {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-[#D8D7D2] space-y-3">
-            <div className="text-[11px] font-mono-meta uppercase tracking-widest text-[#6E6E6E]">
-              Direct Inquiries
+          <div className="pt-6 border-t border-[#D8D7D2] space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-mono-meta uppercase tracking-widest text-[#6E6E6E]">
+                Theme Appearance
+              </span>
+              <button
+                onClick={toggleTheme}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#D8D7D2] bg-[#ECEBE7]/60 text-xs font-mono-meta uppercase tracking-wider text-[#111111]"
+              >
+                {isDark ? <Sun className="w-3.5 h-3.5 text-[#E5C158]" /> : <Moon className="w-3.5 h-3.5 text-[#68715F]" />}
+                <span>{isDark ? 'Light Theme' : 'Charcoal Dark'}</span>
+              </button>
             </div>
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="text-sm font-medium text-[#111111] block hover:text-[#68715F] transition-colors"
-            >
-              {personalInfo.email}
-            </a>
+
+            <div className="space-y-1">
+              <div className="text-[11px] font-mono-meta uppercase tracking-widest text-[#6E6E6E]">
+                Direct Inquiries
+              </div>
+              <a
+                href={`mailto:${personalInfo.email}`}
+                className="text-sm font-medium text-[#111111] block hover:text-[#68715F] transition-colors"
+              >
+                {personalInfo.email}
+              </a>
+            </div>
             <div className="flex items-center gap-4 text-xs font-mono-meta text-[#6E6E6E] pt-1">
               <span>Dhaka (GMT+6)</span>
               <span>•</span>

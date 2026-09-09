@@ -19,12 +19,12 @@ export function Expertise() {
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-[#111111]">
-            Expertise & Craft
+            Skills & Curiosity
           </h2>
         </div>
 
         <p className="text-sm font-mono-meta text-[#6E6E6E] max-w-sm">
-          Disciplines developed through active implementation, rigorous curiosity, and deliberate practice.
+          A growing collection of things I build, explore, practice, and keep learning.
         </p>
       </div>
 

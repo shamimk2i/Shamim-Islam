@@ -1,6 +1,23 @@
 import { useState, FormEvent } from 'react';
-import { ArrowUpRight, Copy, Check, Mail, Github, Linkedin, Twitter, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Copy, Check, Mail, Linkedin } from 'lucide-react';
+import {
+  siGithub,
+  siX,
+  siYoutube,
+  siFacebook,
+  siInstagram,
+  siTwitch,
+  siTiktok
+} from 'simple-icons';
 import { personalInfo } from '../portfolioData';
+
+function BrandIcon({ path, className = "w-4 h-4" }: { path: string; className?: string }) {
+  return (
+    <svg role="img" viewBox="0 0 24 24" className={`${className} fill-current`}>
+      <path d={path} />
+    </svg>
+  );
+}
 
 export function Contact() {
   const [copied, setCopied] = useState(false);
@@ -145,60 +162,97 @@ export function Contact() {
         {/* Right Column: Channels & Coordinates */}
         <div className="lg:col-span-4 space-y-8 pt-4">
           <div className="p-6 bg-[#ECEBE7]/60 border border-[#D8D7D2] rounded-xs space-y-5">
-            <span className="text-[11px] font-mono-meta uppercase tracking-widest text-[#6E6E6E] block">
-              Contact Coordinates
-            </span>
+            <div className="flex items-center justify-between border-b border-[#D8D7D2]/60 pb-3">
+              <span className="text-[11px] font-mono-meta uppercase tracking-widest text-[#6E6E6E] block font-medium">
+                Contact Coordinates
+              </span>
+              <span className="text-[10px] font-mono-meta text-[#68715F] uppercase tracking-wider">
+                9 Channels
+              </span>
+            </div>
 
-            <div className="space-y-3 text-sm">
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="flex items-center justify-between text-[#111111] hover:text-[#68715F] transition-colors py-1 border-b border-[#D8D7D2]/60"
-              >
-                <span className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-[#68715F]" />
-                  <span>Email</span>
-                </span>
-                <span className="font-mono-meta text-xs">{personalInfo.email}</span>
-              </a>
+            <div className="space-y-0.5 text-sm">
+              {[
+                {
+                  name: 'Email',
+                  href: `mailto:${personalInfo.email}`,
+                  isExternal: false,
+                  display: personalInfo.email,
+                  icon: <Mail className="w-4 h-4 text-[#68715F] group-hover:text-[#111111] transition-colors shrink-0" />,
+                },
+                {
+                  name: 'GitHub',
+                  href: personalInfo.github,
+                  isExternal: true,
+                  icon: <BrandIcon path={siGithub.path} className="w-4 h-4 text-[#68715F] group-hover:text-[#111111] transition-colors shrink-0" />,
+                },
+                {
+                  name: 'LinkedIn',
+                  href: personalInfo.linkedin,
+                  isExternal: true,
+                  icon: <Linkedin className="w-4 h-4 text-[#68715F] group-hover:text-[#111111] transition-colors shrink-0" />,
+                },
+                {
+                  name: 'X / Twitter',
+                  href: personalInfo.twitter,
+                  isExternal: true,
+                  icon: <BrandIcon path={siX.path} className="w-4 h-4 text-[#68715F] group-hover:text-[#111111] transition-colors shrink-0" />,
+                },
+                {
+                  name: 'YouTube',
+                  href: personalInfo.youtube,
+                  isExternal: true,
+                  icon: <BrandIcon path={siYoutube.path} className="w-4 h-4 text-[#68715F] group-hover:text-[#111111] transition-colors shrink-0" />,
+                },
+                {
+                  name: 'Facebook',
+                  href: personalInfo.facebook,
+                  isExternal: true,
+                  icon: <BrandIcon path={siFacebook.path} className="w-4 h-4 text-[#68715F] group-hover:text-[#111111] transition-colors shrink-0" />,
+                },
+                {
+                  name: 'Instagram',
+                  href: personalInfo.instagram,
+                  isExternal: true,
+                  icon: <BrandIcon path={siInstagram.path} className="w-4 h-4 text-[#68715F] group-hover:text-[#111111] transition-colors shrink-0" />,
+                },
+                {
+                  name: 'Twitch',
+                  href: personalInfo.twitch,
+                  isExternal: true,
+                  icon: <BrandIcon path={siTwitch.path} className="w-4 h-4 text-[#68715F] group-hover:text-[#111111] transition-colors shrink-0" />,
+                },
+                {
+                  name: 'TikTok',
+                  href: personalInfo.tiktok,
+                  isExternal: true,
+                  icon: <BrandIcon path={siTiktok.path} className="w-4 h-4 text-[#68715F] group-hover:text-[#111111] transition-colors shrink-0" />,
+                },
+              ].map((channel) => (
+                <a
+                  key={channel.name}
+                  href={channel.href}
+                  target={channel.isExternal ? '_blank' : undefined}
+                  rel={channel.isExternal ? 'noopener noreferrer' : undefined}
+                  className="group flex items-center justify-between text-[#111111] hover:text-[#68715F] transition-colors py-2 px-1.5 -mx-1.5 rounded-xs hover:bg-[#ECEBE7] border-b border-[#D8D7D2]/50 last:border-b-0 cursor-pointer"
+                >
+                  <span className="flex items-center gap-2.5">
+                    {channel.icon}
+                    <span className="font-light text-sm group-hover:translate-x-0.5 transition-transform duration-200">
+                      {channel.name}
+                    </span>
+                  </span>
 
-              <a
-                href={personalInfo.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between text-[#111111] hover:text-[#68715F] transition-colors py-1 border-b border-[#D8D7D2]/60"
-              >
-                <span className="flex items-center gap-2">
-                  <Github className="w-4 h-4 text-[#68715F]" />
-                  <span>GitHub</span>
-                </span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-
-              <a
-                href={personalInfo.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between text-[#111111] hover:text-[#68715F] transition-colors py-1 border-b border-[#D8D7D2]/60"
-              >
-                <span className="flex items-center gap-2">
-                  <Linkedin className="w-4 h-4 text-[#68715F]" />
-                  <span>LinkedIn</span>
-                </span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-
-              <a
-                href={personalInfo.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between text-[#111111] hover:text-[#68715F] transition-colors py-1"
-              >
-                <span className="flex items-center gap-2">
-                  <Twitter className="w-4 h-4 text-[#68715F]" />
-                  <span>X / Twitter</span>
-                </span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+                  <div className="flex items-center gap-2">
+                    {channel.display && (
+                      <span className="font-mono-meta text-xs text-[#6E6E6E] group-hover:text-[#111111] transition-colors hidden sm:inline truncate max-w-[170px]">
+                        {channel.display}
+                      </span>
+                    )}
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#6E6E6E] group-hover:text-[#68715F] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200 shrink-0" />
+                  </div>
+                </a>
+              ))}
             </div>
 
             <div className="pt-4 border-t border-[#D8D7D2] text-[11px] font-mono-meta text-[#6E6E6E] space-y-1">

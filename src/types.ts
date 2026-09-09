@@ -53,6 +53,7 @@ export interface CurrentlyItem {
   details: string;
   indicatorColor?: string;
   year?: string;
+  status?: string;
 }
 
 export interface JourneyItem {
@@ -81,11 +82,13 @@ export interface ExploreTopic {
   subtitle: string;
   category: string;
   image: string;
+  isCore?: boolean;
 }
 
 export interface GalleryPhoto {
   id: string;
   title: string;
+  frame?: string;
   location: string;
   year: string;
   aspect: string;

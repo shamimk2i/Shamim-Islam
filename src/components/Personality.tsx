@@ -39,7 +39,7 @@ export function Personality() {
             &ldquo;{personalityStatement.closing}&rdquo;
           </p>
           <span className="text-xs font-mono-meta uppercase tracking-widest text-[#68715F] mt-3 block">
-            — Polymath Philosophy
+            / Polymath Philosophy
           </span>
         </div>
       </div>

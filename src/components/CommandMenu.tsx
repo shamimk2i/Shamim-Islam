@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
-import { Search, ArrowRight, Copy, Check, CornerDownLeft, Sparkles, X } from 'lucide-react';
+import { Search, ArrowRight, Copy, Check, CornerDownLeft, Sparkles, X, Sun, Moon } from 'lucide-react';
 import { personalInfo } from '../portfolioData';
+import { useTheme } from '../context/ThemeContext';
 
 interface CommandMenuProps {
   isOpen: boolean;
@@ -12,20 +13,31 @@ export function CommandMenu({ isOpen, onClose }: CommandMenuProps) {
   const [query, setQuery] = useState('');
   const [copied, setCopied] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const { isDark, toggleTheme } = useTheme();
 
   const commandItems = useMemo(() => [
     { id: 'home', title: 'Home / Top', category: 'Navigation', icon: '↗', action: () => scrollToSection('hero') },
     { id: 'about', title: 'About Shamim', category: 'Navigation', icon: '↗', action: () => scrollToSection('about') },
     { id: 'currently', title: 'Currently (Now)', category: 'Navigation', icon: '↗', action: () => scrollToSection('currently') },
-    { id: 'expertise', title: 'Expertise & Capabilities', category: 'Navigation', icon: '↗', action: () => scrollToSection('expertise') },
+    { id: 'expertise', title: 'Skills & Curiosity', category: 'Navigation', icon: '↗', action: () => scrollToSection('expertise') },
     { id: 'work', title: 'Selected Work (Things I’ve Built)', category: 'Navigation', icon: '↗', action: () => scrollToSection('work') },
     { id: 'currently-building', title: 'Currently Building (Kizuna)', category: 'Navigation', icon: '↗', action: () => scrollToSection('currently-building') },
     { id: 'experiments-archive', title: 'More Experiments', category: 'Navigation', icon: '↗', action: () => scrollToSection('experiments-archive') },
     { id: 'journey', title: 'My Journey / Milestones', category: 'Navigation', icon: '↗', action: () => scrollToSection('journey') },
-    { id: 'explore', title: 'Things I Like To Explore', category: 'Navigation', icon: '↗', action: () => scrollToSection('explore') },
+    { id: 'explore', title: "Things I'm Into (Curiosities)", category: 'Navigation', icon: '↗', action: () => scrollToSection('explore') },
     { id: 'notes', title: 'Notes & Digital Garden', category: 'Navigation', icon: '↗', action: () => scrollToSection('notes') },
-    { id: 'gallery', title: 'Visual Gallery', category: 'Navigation', icon: '↗', action: () => scrollToSection('gallery') },
+    { id: 'gallery', title: 'Visual Archive', category: 'Navigation', icon: '↗', action: () => scrollToSection('gallery') },
     { id: 'contact', title: 'Start a Conversation', category: 'Navigation', icon: '↗', action: () => scrollToSection('contact') },
+    {
+      id: 'toggle-theme',
+      title: isDark ? 'Switch to Light Theme' : 'Switch to Dark Charcoal Theme',
+      category: 'Preferences',
+      icon: isDark ? '☀' : '☾',
+      action: () => {
+        toggleTheme();
+        onClose();
+      }
+    },
     {
       id: 'copy-email',
       title: `Copy Email (${personalInfo.email})`,
@@ -33,7 +45,7 @@ export function CommandMenu({ isOpen, onClose }: CommandMenuProps) {
       icon: '✉',
       action: () => copyEmail()
     }
-  ], []);
+  ], [isDark, toggleTheme]);
 
   const filteredItems = useMemo(() => {
     if (!query.trim()) return commandItems;

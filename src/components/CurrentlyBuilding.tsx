@@ -35,7 +35,7 @@ export function CurrentlyBuilding() {
                 {item.title}
               </h3>
               <span className="text-xl sm:text-2xl text-[#68715F] font-light">
-                — {item.subtitle}
+                / {item.subtitle}
               </span>
             </div>
             <p className="mt-4 text-base md:text-lg text-[#6E6E6E] font-normal leading-relaxed">

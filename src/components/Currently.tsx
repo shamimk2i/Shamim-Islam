@@ -20,12 +20,12 @@ export function Currently() {
         </div>
 
         <p className="text-xs font-mono-meta text-[#6E6E6E] uppercase tracking-wider max-w-xs">
-          A living snapshot of active questions, curiosities, and work-in-progress.
+          A living snapshot of what I am learning, building, practicing, and exploring.
         </p>
       </div>
 
       <div className="divide-y divide-[#D8D7D2] border-y border-[#D8D7D2]">
-        {currentlyItems.map((item, index) => (
+        {currentlyItems.map((item) => (
           <div
             key={item.category}
             className="group py-6 md:py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-[#ECEBE7]/40 transition-colors px-2 md:px-4"
@@ -55,10 +55,10 @@ export function Currently() {
               </p>
             </div>
 
-            {/* Period / Year */}
+            {/* Period / Status */}
             <div className="md:col-span-1 text-left md:text-right">
-              <span className="text-[11px] font-mono-meta text-[#6E6E6E] px-2 py-0.5 bg-[#ECEBE7] border border-[#D8D7D2] rounded-xs inline-block">
-                {item.year || '2026'}
+              <span className="text-[11px] font-mono-meta text-[#6E6E6E] px-2 py-0.5 bg-[#ECEBE7] border border-[#D8D7D2] rounded-xs inline-block uppercase whitespace-nowrap">
+                {item.status || item.year || 'Active'}
               </span>
             </div>
           </div>
