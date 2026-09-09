@@ -100,10 +100,10 @@ export function Hero() {
             data-cursor="project"
             className="relative w-full aspect-[4/5] sm:aspect-[3/4] max-w-md mx-auto lg:ml-auto bg-[#ECEBE7] border border-[#D8D7D2] overflow-hidden group shadow-lg rounded-xs"
           >
-            {/* Shamim Islam Portrait */}
+            {/* Hero Image */}
             <img
-              src={personalInfo.profileImage}
-              alt="Portrait of Shamim Islam"
+              src={personalInfo.heroImage || personalInfo.profileImage}
+              alt="Shamim Islam"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
               loading="eager"

@@ -33,8 +33,9 @@ export const personalInfo = {
     { label: "Hardware & Web", value: "Active" },
     { label: "Timezone", value: "GMT+6" }
   ],
-  // Shamim Islam portrait photo
-  profileImage: "https://i.ibb.co.com/TqTsmjZ6/image.jpg",
+  // Shamim Islam imagery
+  heroImage: "https://i.ibb.co.com/BVz3wdcW/Black-White-Modern-Monogram-CR-Logo-Design-1.png",
+  profileImage: "https://i.ibb.co.com/BVz3wdcW/Black-White-Modern-Monogram-CR-Logo-Design-1.png",
   profileSecondaryImage: "https://i.ibb.co.com/TqTsmjZ6/image.jpg",
   photoCreditNote: "Shamim Islam, Dhaka, Bangladesh"
 };
