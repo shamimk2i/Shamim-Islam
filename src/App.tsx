@@ -10,6 +10,7 @@ import { Expertise } from './components/Expertise';
 import { SelectedWork } from './components/SelectedWork';
 import { CurrentlyBuilding } from './components/CurrentlyBuilding';
 import { MoreExperiments } from './components/MoreExperiments';
+import { GitHubActivity } from './components/GitHubActivity';
 import { Journey } from './components/Journey';
 import { Experiments } from './components/Experiments';
 import { Notes } from './components/Notes';
@@ -100,7 +101,10 @@ function PortfolioApp() {
         {/* 07: More Experiments (Compact Archive) */}
         <MoreExperiments />
 
-        {/* 08: Journey & Milestones Timeline */}
+        {/* 08: GitHub Activity & Code Cadence Heatmap */}
+        <GitHubActivity />
+
+        {/* 09: Journey & Milestones Timeline */}
         <Journey />
 
         {/* 09: Things I'm Into (Curiosities & Explorations) */}

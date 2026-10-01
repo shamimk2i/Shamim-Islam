@@ -14,11 +14,12 @@ const SECTIONS: SectionInfo[] = [
   { id: 'expertise', number: '03', name: 'Skills' },
   { id: 'work', number: '04', name: 'Work' },
   { id: 'building', number: '05', name: 'Kizuna' },
-  { id: 'journey', number: '06', name: 'Journey' },
-  { id: 'notes', number: '07', name: 'Notes' },
-  { id: 'gallery', number: '08', name: 'Archive' },
-  { id: 'newsletter', number: '09', name: 'Dispatches' },
-  { id: 'contact', number: '10', name: 'Contact' }
+  { id: 'activity', number: '06', name: 'Activity' },
+  { id: 'journey', number: '07', name: 'Journey' },
+  { id: 'notes', number: '08', name: 'Notes' },
+  { id: 'gallery', number: '09', name: 'Archive' },
+  { id: 'newsletter', number: '10', name: 'Dispatches' },
+  { id: 'contact', number: '11', name: 'Contact' }
 ];
 
 export function ScrollSpy() {

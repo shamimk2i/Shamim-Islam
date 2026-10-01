@@ -23,6 +23,7 @@ export function CommandMenu({ isOpen, onClose }: CommandMenuProps) {
     { id: 'work', title: 'Selected Work (Things I’ve Built)', category: 'Navigation', icon: '↗', action: () => scrollToSection('work') },
     { id: 'currently-building', title: 'Currently Building (Kizuna)', category: 'Navigation', icon: '↗', action: () => scrollToSection('currently-building') },
     { id: 'experiments-archive', title: 'More Experiments', category: 'Navigation', icon: '↗', action: () => scrollToSection('experiments-archive') },
+    { id: 'activity', title: 'GitHub Activity & Consistency Heatmap', category: 'Navigation', icon: '↗', action: () => scrollToSection('activity') },
     { id: 'journey', title: 'My Journey / Milestones', category: 'Navigation', icon: '↗', action: () => scrollToSection('journey') },
     { id: 'explore', title: "Things I'm Into (Curiosities)", category: 'Navigation', icon: '↗', action: () => scrollToSection('explore') },
     { id: 'notes', title: 'Notes & Digital Garden', category: 'Navigation', icon: '↗', action: () => scrollToSection('notes') },

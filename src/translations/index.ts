@@ -111,6 +111,27 @@ export interface TranslationDictionary {
     subtitle: string;
     status: string;
   };
+  activity: {
+    eyebrow: string;
+    heading: string;
+    subheading: string;
+    totalContributions: string;
+    currentStreak: string;
+    longestStreak: string;
+    activeDays: string;
+    less: string;
+    more: string;
+    viewProfile: string;
+    mockNotice: string;
+    year2026: string;
+    year2025: string;
+    recentCommits: string;
+    contributionsOn: string;
+    noContributions: string;
+    mon: string;
+    wed: string;
+    fri: string;
+  };
   journey: {
     eyebrow: string;
     heading: string;
@@ -277,6 +298,27 @@ export const translations: Record<SupportedLanguage, TranslationDictionary> = {
       subtitle: "A minimal, intentional study & habit tracker for builders.",
       status: "In Development"
     },
+    activity: {
+      eyebrow: "06 / CONSISTENCY & CODE CADENCE",
+      heading: "Building every day, one commit at a time.",
+      subheading: "A visualization of daily commits, hardware sketches, and web experiments across the past 52 weeks.",
+      totalContributions: "Total Contributions",
+      currentStreak: "Current Streak",
+      longestStreak: "Longest Streak",
+      activeDays: "Active Days",
+      less: "Less",
+      more: "More",
+      viewProfile: "View GitHub Profile",
+      mockNotice: "Curated visualization based on active project commits and public repository activity.",
+      year2026: "2026 (Recent)",
+      year2025: "2025 (Archive)",
+      recentCommits: "Recent Repository Activity",
+      contributionsOn: "contributions on",
+      noContributions: "No commits recorded on",
+      mon: "Mon",
+      wed: "Wed",
+      fri: "Fri"
+    },
     journey: {
       eyebrow: "06 / MILESTONES",
       heading: "My Journey so far.",
@@ -441,6 +483,27 @@ export const translations: Record<SupportedLanguage, TranslationDictionary> = {
       title: "Kizuna (絆) — 学習トラッカー",
       subtitle: "ビルダーのためのミニマルで目的志向の学習記録ツール。",
       status: "アクティブ開発中"
+    },
+    activity: {
+      eyebrow: "06 / 開発の一貫性とコミット記録",
+      heading: "毎日の積み重ね、コードで紡ぐ習慣。",
+      subheading: "過去52週間にわたる日々のコミット、ハードウェア実験、Web開発の活動状況を可視化。",
+      totalContributions: "総コントリビューション",
+      currentStreak: "現在の連続コミット",
+      longestStreak: "最長連続記録",
+      activeDays: "活動日数比率",
+      less: "少",
+      more: "多",
+      viewProfile: "GitHubプロフィールを見る",
+      mockNotice: "公開リポジトリおよびローカル開発ログに基づいた再現ビジュアライゼーション。",
+      year2026: "2026年（直近）",
+      year2025: "2025年（アーカイブ）",
+      recentCommits: "最近のリポジトリ活動",
+      contributionsOn: "件のコミット（日付：",
+      noContributions: "この日の記録はありません（日付：",
+      mon: "月",
+      wed: "水",
+      fri: "金"
     },
     journey: {
       eyebrow: "06 / 成長の軌跡",
@@ -607,6 +670,27 @@ export const translations: Record<SupportedLanguage, TranslationDictionary> = {
       subtitle: "Un rastreador de estudio y hábitos minimalista y enfocado para creadores.",
       status: "En Desarrollo"
     },
+    activity: {
+      eyebrow: "06 / CONSTANCIA Y CADENCIA DE CÓDIGO",
+      heading: "Construyendo a diario, un commit a la vez.",
+      subheading: "Visualización de commits diarios, prototipos de hardware y experimentos web durante las últimas 52 semanas.",
+      totalContributions: "Contribuciones Totales",
+      currentStreak: "Racha Actual",
+      longestStreak: "Racha Más Larga",
+      activeDays: "Días Activos",
+      less: "Menos",
+      more: "Más",
+      viewProfile: "Ver Perfil de GitHub",
+      mockNotice: "Visualización basada en repositorios públicos y registros de desarrollo de proyectos.",
+      year2026: "2026 (Reciente)",
+      year2025: "2025 (Archivo)",
+      recentCommits: "Actividad Reciente en Repositorios",
+      contributionsOn: "contribuciones el",
+      noContributions: "Sin contribuciones el",
+      mon: "Lun",
+      wed: "Mié",
+      fri: "Vie"
+    },
     journey: {
       eyebrow: "06 / HITOS Y TRAYECTORIA",
       heading: "Mi viaje hasta ahora.",
@@ -771,6 +855,27 @@ export const translations: Record<SupportedLanguage, TranslationDictionary> = {
       title: "কিজুনা — স্টাডি ট্র্যাকার",
       subtitle: "নির্মাতা ও শিক্ষার্থীদের জন্য একটি মার্জিত স্টাডি ও হ্যাবিট ট্র্যাকার।",
       status: "চলমান উন্নয়ন"
+    },
+    activity: {
+      eyebrow: "০৬ / ধারাবাহিকতা ও কোডিং গতিবিধি",
+      heading: "প্রতিদিন নির্মাণ, এক একটি কমিটের মাধ্যমে।",
+      subheading: "বিগত ৫২ সপ্তাহে হার্ডওয়্যার প্রোটোটাইপ ও ওয়েব প্রজেক্টে দৈনিক কমিট এবং সক্রিয়তার ভিজ্যুয়ালাইজেশন।",
+      totalContributions: "মোট কন্ট্রিবিউশন",
+      currentStreak: "চলমান স্ট্রিক",
+      longestStreak: "সর্বোচ্চ স্ট্রিক",
+      activeDays: "সক্রিয় দিনের হার",
+      less: "কম",
+      more: "বেশি",
+      viewProfile: "গিটহাব প্রোফাইল দেখুন",
+      mockNotice: "পাবলিক রিপোজিটরি ও লোকাল প্রজেক্টের রেকর্ডের ওপর ভিত্তি করে উপস্থাপিত ভিজ্যুয়ালাইজেশন।",
+      year2026: "২০২৬ (সাম্প্রতিক)",
+      year2025: "২০২৫ (সংরক্ষণ)",
+      recentCommits: "সাম্প্রতিক রিপোজিটরি আপডেট",
+      contributionsOn: "টি কন্ট্রিবিউশন ছিল",
+      noContributions: "কোনো কন্ট্রিবিউশন নেই —",
+      mon: "সোম",
+      wed: "বুধ",
+      fri: "শুক্র"
     },
     journey: {
       eyebrow: "০৬ / অভিযাত্রা ও মাইলফলক",
