@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
-import { ArrowUp, Sparkles, Terminal } from 'lucide-react';
+import { ArrowUp, Terminal } from 'lucide-react';
 import { personalInfo } from '../portfolioData';
+import { useLanguage } from '../context/LanguageContext';
+import { useSound } from '../context/SoundContext';
+import { MagneticButton } from './MagneticButton';
 
 interface FooterProps {
   onOpenCommand: () => void;
@@ -9,22 +12,26 @@ interface FooterProps {
 export function Footer({ onOpenCommand }: FooterProps) {
   const [easterEggActive, setEasterEggActive] = useState(false);
   const [currentYear, setCurrentYear] = useState(2026);
+  const { t } = useLanguage();
+  const { playClick, playPop } = useSound();
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());
   }, []);
 
   const scrollToTop = () => {
+    playClick();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const scrollToSection = (id: string) => {
+    playClick();
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <footer className="bg-[#171717] text-[#F5F4F0] pt-20 pb-12 px-6 md:px-12 border-t border-white/10">
+    <footer className="bg-[#121316] text-[#F5F4F0] pt-20 pb-12 px-6 md:px-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Top Split */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
@@ -32,19 +39,19 @@ export function Footer({ onOpenCommand }: FooterProps) {
           <div className="md:col-span-6 space-y-4">
             <button
               onClick={scrollToTop}
-              className="text-2xl sm:text-3xl font-light tracking-tight hover:text-[#68715F] transition-colors inline-flex items-center gap-2"
+              className="text-2xl sm:text-3xl font-light tracking-tight hover:text-[#8FA183] transition-colors inline-flex items-center gap-2 cursor-pointer"
             >
               <span>{personalInfo.brandMark}</span>
-              <span className="w-2 h-2 rounded-full bg-[#68715F]" />
+              <span className="w-2 h-2 rounded-full bg-[#8FA183]" />
             </button>
 
             <p className="text-sm font-mono-meta text-[#F5F4F0]/60 max-w-sm leading-relaxed">
-              {personalInfo.subheadline}
+              {t.footer.tagline}
             </p>
 
             <div className="pt-2">
-              <span className="text-xs font-mono-meta text-[#68715F] uppercase tracking-widest block">
-                {personalInfo.location} • {personalInfo.coordinates}
+              <span className="text-xs font-mono-meta text-[#8FA183] uppercase tracking-widest block">
+                {t.footer.timezone} • {personalInfo.coordinates}
               </span>
             </div>
           </div>
@@ -55,54 +62,23 @@ export function Footer({ onOpenCommand }: FooterProps) {
               Index
             </span>
             <ul className="space-y-2 text-xs font-mono-meta tracking-wider text-[#F5F4F0]/80">
-              <li>
-                <button
-                  onClick={() => scrollToSection('about')}
-                  className="hover:text-[#F5F4F0] transition-colors"
-                >
-                  About
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('currently')}
-                  className="hover:text-[#F5F4F0] transition-colors"
-                >
-                  Currently (Now)
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('work')}
-                  className="hover:text-[#F5F4F0] transition-colors"
-                >
-                  Selected Work
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('journey')}
-                  className="hover:text-[#F5F4F0] transition-colors"
-                >
-                  Journey
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('notes')}
-                  className="hover:text-[#F5F4F0] transition-colors"
-                >
-                  Writing
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('gallery')}
-                  className="hover:text-[#F5F4F0] transition-colors"
-                >
-                  Visual Archive
-                </button>
-              </li>
+              {[
+                { id: 'about', label: t.nav.about },
+                { id: 'currently', label: 'Currently (Now)' },
+                { id: 'work', label: t.nav.work },
+                { id: 'journey', label: t.nav.journey },
+                { id: 'notes', label: t.nav.writing },
+                { id: 'gallery', label: t.nav.gallery }
+              ].map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className="hover:text-[#F5F4F0] hover:translate-x-0.5 transition-all cursor-pointer"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -140,8 +116,8 @@ export function Footer({ onOpenCommand }: FooterProps) {
                 onClick={onOpenCommand}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-mono-meta text-[#F5F4F0]/70 hover:text-[#F5F4F0] border border-white/20 rounded-xs bg-white/5 hover:bg-white/10 transition-colors cursor-pointer"
               >
-                <Terminal className="w-3 h-3 text-[#68715F]" />
-                <span>Command Menu [K]</span>
+                <Terminal className="w-3 h-3 text-[#8FA183]" />
+                <span>{t.footer.pressK}</span>
               </button>
             </div>
           </div>
@@ -152,28 +128,32 @@ export function Footer({ onOpenCommand }: FooterProps) {
           <div className="flex items-center gap-4">
             <span>© {currentYear} Shamim Islam.</span>
             <span>•</span>
-            <span className="text-[#F5F4F0]/80">Built with curiosity.</span>
+            <span className="text-[#F5F4F0]/80">Built with curiosity & craft.</span>
           </div>
 
           {/* Easter egg trigger mark */}
           <div className="flex items-center gap-4">
             <div
-              onMouseEnter={() => setEasterEggActive(true)}
+              onMouseEnter={() => {
+                playPop();
+                setEasterEggActive(true);
+              }}
               onMouseLeave={() => setEasterEggActive(false)}
               className="relative cursor-pointer py-1 px-2 border border-transparent hover:border-white/20 rounded-xs transition-colors"
             >
-              <span className="text-[11px] text-[#68715F]">
+              <span className="text-[11px] text-[#8FA183]">
                 {easterEggActive ? 'Still exploring.' : '●'}
               </span>
             </div>
 
-            <button
+            <MagneticButton
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 text-[#F5F4F0] hover:text-[#68715F] transition-colors py-1"
+              strength={0.2}
+              className="inline-flex items-center gap-1.5 text-[#F5F4F0] hover:text-[#8FA183] transition-colors py-1 cursor-pointer"
             >
-              <span>Back to top</span>
+              <span>{t.footer.backToTop}</span>
               <ArrowUp className="w-3.5 h-3.5" />
-            </button>
+            </MagneticButton>
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+export type SupportedLanguage = 'en' | 'ja' | 'es' | 'bn';
+
 export interface Project {
   id: string;
   number: string;
@@ -85,6 +87,15 @@ export interface ExploreTopic {
   isCore?: boolean;
 }
 
+export interface PhotoExifData {
+  camera: string;
+  lens: string;
+  aperture: string;
+  shutter: string;
+  iso: string;
+  focalLength: string;
+}
+
 export interface GalleryPhoto {
   id: string;
   title: string;
@@ -94,4 +105,6 @@ export interface GalleryPhoto {
   aspect: string;
   image: string;
   caption: string;
+  category?: 'all' | 'street' | 'hardware' | 'workspace' | 'macro';
+  exif?: PhotoExifData;
 }

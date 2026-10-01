@@ -15,12 +15,19 @@ import { Experiments } from './components/Experiments';
 import { Notes } from './components/Notes';
 import { VisualGallery } from './components/VisualGallery';
 import { Personality } from './components/Personality';
+import { Newsletter } from './components/Newsletter';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
+import { ScrollSpy } from './components/ScrollSpy';
+import { FloatingControls } from './components/FloatingControls';
+import { ReadingPlayer } from './components/ReadingPlayer';
 import { Project } from './types';
 import { projectsData } from './portfolioData';
 import { ThemeProvider } from './context/ThemeContext';
+import { SoundProvider } from './context/SoundContext';
+import { ReadingProvider } from './context/ReadingContext';
+import { LanguageProvider } from './context/LanguageContext';
 
 function PortfolioApp() {
   const [commandMenuOpen, setCommandMenuOpen] = useState(false);
@@ -50,82 +57,99 @@ function PortfolioApp() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#F5F4F0] text-[#111111] font-sans selection:bg-[#68715F]/20 selection:text-[#111111] transition-colors duration-300">
-        {/* Scroll Progress Bar */}
-        <ProgressBar />
+    <div className="relative min-h-screen bg-[#F5F4F0] text-[#111111] dark:bg-[#121315] dark:text-[#EDEDEB] font-sans selection:bg-[#68715F]/20 selection:text-[#111111] transition-colors duration-300">
+      {/* Spring Scroll Progress Bar */}
+      <ProgressBar />
 
-        {/* Desktop Custom Cursor */}
-        <CustomCursor />
+      {/* Floating Section Tracker (ScrollSpy) */}
+      <ScrollSpy />
 
-        {/* Keyboard-accessible Command Menu (Shortcut: K) */}
-        <CommandMenu
-          isOpen={commandMenuOpen}
-          onClose={() => setCommandMenuOpen(false)}
-          onSelectProject={handleSelectProjectFromCommand}
-        />
+      {/* Desktop Custom Cursor */}
+      <CustomCursor />
 
-        {/* Minimal Sticky Navigation */}
-        <Navbar onOpenCommand={() => setCommandMenuOpen(true)} />
+      {/* Keyboard-accessible Command Menu (Shortcut: K) */}
+      <CommandMenu
+        isOpen={commandMenuOpen}
+        onClose={() => setCommandMenuOpen(false)}
+        onSelectProject={handleSelectProjectFromCommand}
+      />
 
-        {/* Main Portfolio Flow */}
-        <main>
-          {/* 01: Hero Section */}
-          <Hero />
+      {/* Minimal Sticky Navigation */}
+      <Navbar onOpenCommand={() => setCommandMenuOpen(true)} />
 
-          {/* 02: About Me Section */}
-          <About />
+      {/* Main Portfolio Flow */}
+      <main id="top">
+        {/* 01: Hero Section */}
+        <Hero />
 
-          {/* 03: Currently (Now) Section */}
-          <Currently />
+        {/* 02: About Me Section */}
+        <About />
 
-          {/* 04: Capabilities & Expertise */}
-          <Expertise />
+        {/* 03: Currently (Now) Section */}
+        <Currently />
 
-          {/* 05: Selected Work & Things I've built */}
-          <SelectedWork onOpenModal={(project) => setActiveProjectModal(project)} />
+        {/* 04: Capabilities & Expertise */}
+        <Expertise />
 
-          {/* 06: Currently Building (Kizuna Study Tracker) */}
-          <CurrentlyBuilding />
+        {/* 05: Selected Work & Things I've built with 3D Tilt & Sandboxes */}
+        <SelectedWork onOpenModal={(project) => setActiveProjectModal(project)} />
 
-          {/* 07: More Experiments (Compact Archive) */}
-          <MoreExperiments />
+        {/* 06: Currently Building (Kizuna Study Tracker) */}
+        <CurrentlyBuilding />
 
-          {/* 08: Journey & Milestones Timeline */}
-          <Journey />
+        {/* 07: More Experiments (Compact Archive) */}
+        <MoreExperiments />
 
-          {/* 07: Things I'm Into (Curiosities & Explorations) */}
-          <Experiments />
+        {/* 08: Journey & Milestones Timeline */}
+        <Journey />
 
-          {/* 08: Digital Garden & Notes */}
-          <Notes />
+        {/* 09: Things I'm Into (Curiosities & Explorations) */}
+        <Experiments />
 
-          {/* 09: Visual Archive */}
-          <VisualGallery />
+        {/* 10: Digital Garden & Notes with 3D Tilt Cards */}
+        <Notes />
 
-          {/* 10: Personality & Perspective Statement */}
-          <Personality />
+        {/* 11: Visual Archive with Drag-to-scroll & Lightbox Modal */}
+        <VisualGallery />
 
-          {/* 11: Contact & Collaboration */}
-          <Contact />
-        </main>
+        {/* 12: Personality & Perspective Statement */}
+        <Personality />
 
-        {/* 12: Dark Footer with Easter Egg */}
-        <Footer onOpenCommand={() => setCommandMenuOpen(true)} />
+        {/* 13: Field Dispatches Newsletter */}
+        <Newsletter />
 
-        {/* Project Case Study Reader Modal */}
-        <ProjectModal
-          project={activeProjectModal}
-          onClose={() => setActiveProjectModal(null)}
-        />
-      </div>
+        {/* 14: Contact & Collaboration */}
+        <Contact />
+      </main>
+
+      {/* 14: Dark Footer with Easter Egg */}
+      <Footer onOpenCommand={() => setCommandMenuOpen(true)} />
+
+      {/* Project Case Study Reader Modal */}
+      <ProjectModal
+        project={activeProjectModal}
+        onClose={() => setActiveProjectModal(null)}
+      />
+
+      {/* Persistent Floating Controls (Sound Toggle, Read Aloud, Scroll %) */}
+      <FloatingControls />
+
+      {/* Floating Speech Reader Player */}
+      <ReadingPlayer />
+    </div>
   );
 }
 
 export default function App() {
   return (
     <ThemeProvider>
-      <PortfolioApp />
+      <SoundProvider>
+        <LanguageProvider>
+          <ReadingProvider>
+            <PortfolioApp />
+          </ReadingProvider>
+        </LanguageProvider>
+      </SoundProvider>
     </ThemeProvider>
   );
 }
-
